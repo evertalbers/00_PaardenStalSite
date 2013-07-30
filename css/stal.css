@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* CHEAT SHEET
-cd /Volumes/StreeffExtHD/Streeff/PaardenStal/1305_foundation_site/scss
+cd /Volumes/StreeffExtHD/Streeff/PaardenStal/00_PaardenStalSite/scss
 sass --watch stal.scss:../css/stal.css
 */
 /* normalize.css v2.1.1 | MIT License | git.io/normalize */
@@ -2850,22 +2850,19 @@ form.custom {
       list-style: none;
       border-top-color: #e6e6e6; }
 
-#toplogo {
-  height: auto;
-  width: 300px; }
-
-.tinted {
-  background: #e0dece; }
-
-.homebelow {
-  margin-top: 1em; }
-
 .separator {
   color: black;
   border-top: 1px dotted black;
   margin-top: 1em; }
   .separator:before {
     content: "Nieuw paginatype"; }
+  .separator #toplogo {
+    height: auto;
+    width: 300px; }
+  .separator .tinted {
+    background: #e0dece; }
+  .separator .homebelow {
+    margin-top: 1em; }
 
 .artikel_overzicht_item {
   margin: 0 0 1em !important;

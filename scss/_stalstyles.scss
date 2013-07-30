@@ -1,3 +1,14 @@
+// Hulp tijdens ontwikkeling
+
+.separator { 
+	color: black;
+	border-top: 1px dotted black;
+	margin-top: 1em;
+	&:before {
+		content: "Nieuw paginatype";
+	}
+// Einde Hulp tijdens ontwikkeling
+
 #toplogo {
 	height: auto;
 	width: 300px;
@@ -8,13 +19,7 @@
 .homebelow {
 	margin-top: 1em;
 }
-.separator { 
-	color: black;
-	border-top: 1px dotted black;
-	margin-top: 1em;
-	&:before {
-		content: "Nieuw paginatype";
-	}
+
 }
 $behavior: nest;
 
