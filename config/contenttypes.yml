@@ -1,0 +1,79 @@
+pages:
+    name: Pages
+    singular_name: Page
+    fields:
+        title:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title
+        imagelist:
+            type: imagelist
+            label: beeld of meerdere beelden
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ chapters ]
+    sort: title
+    recordsperpage: 100
+
+projects:
+    name: Projects
+    singular_name: Project
+    fields:
+        title:
+            type: text
+            class: large
+        madeby:
+            type: text
+            class: wide
+            prefix: "Vermeld hier de Paardenstaller(s) achter het project"
+        slug:
+            type: slug
+            uses: title
+        imagelist:
+            type: imagelist
+            label: beeld of meerdere beelden
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        showonhomeslider:
+            label: Toon op homepage
+            postfix: "De meest recente X projecten worden getoond op de homepage. De titel komt in het bijschrift."
+            type: select
+            values: [ ja, nee ]
+        sort: datepublish DESC
+        recordsperpage: 100
+
+paard:
+    name: Paarden
+    singular name: Paarden
+    fields:
+        title:
+            type: text
+            class: large
+        image:
+            type: image
+        bedrijfsnaam:
+            type: text
+            class: large
+        activiteiten:
+            type: text
+            class: large
+        website:
+            type: text
+            class: wide
+            prefix: "Bijvoorbeeld http://www.mijnwebsite.nl - dus inclusief http://"
+        slug:
+            type: slug
+            uses: title

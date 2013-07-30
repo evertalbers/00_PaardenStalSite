@@ -1,0 +1,78 @@
+// Hulp tijdens ontwikkeling
+
+.separator { 
+	color: black;
+	border-top: 1px dotted black;
+	margin-top: 1em;
+	&:before {
+		content: "Nieuw paginatype";
+	}
+}
+// Einde Hulp tijdens ontwikkeling
+
+#toplogo {
+	height: auto;
+	width: emCalc(350px);
+	margin-top: emCalc(5px);
+}
+.toplogo_container {
+
+}
+.tinted {
+	background: $tinted-background-color;
+}
+.homebelow {
+	margin-top: 1em;
+}
+
+$behavior: nest;
+
+$grijsborder: 1px solid #E6E6E6;
+
+.artikel_overzicht_item {
+	margin: 0 0 1em !important; 
+	// padding-bottom: 1em;
+	// background: yellow;
+	border-bottom: $grijsborder;
+	display: block;
+	// @include grid-row($behavior);
+
+	a {
+		&:hover {
+			text-decoration: underline;
+
+			img {
+				opacity: 0.6;
+				} 
+			}
+		}
+
+	.image_container {
+		padding-left:0;
+	}
+}
+.deelnemerblok {
+	// border-left: $grijsborder;
+	border-right: $grijsborder;
+	min-height: emCalc(450px);
+	margin-bottom: 1em;
+
+	&:last-child {border-right: none;}
+
+	.deelnemerlink {
+		position: absolute;
+		bottom: emCalc(0px);
+		font-weight: 700;
+	}
+}
+footer {
+	padding-top:1em;
+	padding-bottom:1em;
+	width:100% !important;
+	display: block;
+	background: $tinted-background-color;
+	font-size: 0.75em;
+
+	&.row {width:100% !important;
+		max-width: 100%;}
+}

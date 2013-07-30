@@ -1,2861 +1,0 @@
-3.2.1 (Media Mark)
-a2e015d5fa0a09548eb923b0f65f3156d79de9cd
-o:Sass::Tree::RootNode
-:@has_childrenT:
-@linei:@template"{{//
-// Foundation Variables
-//
-
-// The default font-size is set to 100% of the browser style sheet (usually 16px)
-// for compatibility with brower-based text zoom or user-set defaults.
-$base-font-size: 100% !default;
-
-// $base-line-height is 24px while $base-font-size is 16px
-// $base-line-height: 150%;
-
-// This is the default html and body font-size for the base em value.
-
-// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
-// If you want your base font-size to be a different size and not have it effect grid size too,
-// set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
-$em-base: 16px !default;
-
-// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
-@function emCalc($pxWidth) {
-  @return $pxWidth / $em-base * 1em;
-}
-
-// Change whether or not you include browser prefixes
-$experimental: true !default;
-
-// Various global styles
-
-// $default-float: left;
-
-// $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
-// $body-font-style: normal;
-
-// Font-smoothing
-
-// $font-smoothing: antialiased;
-
-// Text direction settings
-
-// $text-direction: ltr;
-
-// Colors
-
-$primary-color: #B20404;
-// $secondary-color: #e9e9e9;
-// $alert-color: #c60f13;
-// $success-color: #5da423;
-$tinted-background-color: #E0DECE;
-
-// Make sure border radius matches unless we want it different.
-
-// $global-radius: 3px;
-// $global-rounded: 1000px;
-
-// Inset shadow shiny edges and depressions.
-
-// $shiny-edge-size: 0 1px 0;
-// $shiny-edge-color: rgba(#fff, .5);
-// $shiny-edge-active-color: rgba(#000, .2);
-
-// Control whether or not CSS classes come through in the CSS files.
-
-// $include-html-classes: true;
-// $include-print-styles: true;
-// $include-html-global-classes: $include-html-classes;
-// $include-html-type-classes: $include-html-classes;
-// $include-html-grid-classes: $include-html-classes;
-// $include-html-visibility-classes: $include-html-classes;
-// $include-html-button-classes: $include-html-classes;
-// $include-html-form-classes: $include-html-classes;
-// $include-html-custom-form-classes: $include-html-classes;
-// $include-html-media-classes: $include-html-classes;
-// $include-html-section-classes: $include-html-classes;
-// $include-html-orbit-classes: $include-html-classes;
-// $include-html-reveal-classes: $include-html-classes;
-// $include-html-joyride-classes: $include-html-classes;
-// $include-html-clearing-classes: $include-html-classes;
-// $include-html-alert-classes: $include-html-classes;
-// $include-html-nav-classes: $include-html-classes;
-// $include-html-top-bar-classes: $include-html-classes;
-// $include-html-label-classes: $include-html-classes;
-// $include-html-panel-classes: $include-html-classes;
-// $include-html-pricing-classes: $include-html-classes;
-// $include-html-progress-classes: $include-html-classes;
-// $include-html-magellan-classes: $include-html-classes;
-// $include-html-tooltip-classes: $include-html-classes;
-
-// Media Queries
-
-// $small-screen: 768px;
-// $medium-screen: 1280px;
-// $large-screen: 1440px;
-
-// $screen: "only screen";
-// $small: "only screen and (min-width: #{$small-screen})";
-// $medium: "only screen and (min-width: #{$medium-screen})";
-// $large: "only screen and (min-width: #{$large-screen})";
-// $landscape: "only screen and (orientation: landscape)";
-// $portrait: "only screen and (orientation: portrait)";
-
-//// Cursors
-
-//Custom use example -> $cursor-default-value: url(http://cursors-site.net/path/to/custom/cursor/default.cur),progress;
-
-// $cursor-crosshair-value: "crosshair";
-// $cursor-default-value: "default";
-// $cursor-pointer-value: "pointer";
-// $cursor-help-value: "help";
-
-//
-// Grid Variables
-//
-
-// $row-width: emCalc(1000px);
-// $column-gutter: emCalc(30px);
-// $total-columns: 12;
-
-//
-// Block Grid Variables
-//
-
-// Maximum number of block grid elements per row
-
-// $block-grid-elements: 12;
-// $block-grid-default-spacing: emCalc(20px);
-
-// Enables media queries for block-grid classes. Set to false if writing semantic HTML.
-
-// $block-grid-media-queries: true;
-
-//
-// Typography Variables
-//
-
-// Heading font styles
-
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $header-font-weight: bold;
-// $header-font-style: normal;
-// $header-font-color: #222;
-// $header-line-height: 1.4;
-// $header-top-margin: .2em;
-$header-bottom-margin: .2em;
-// $header-text-rendering: optimizeLegibility;
-
-// Heading font sizes
-
-// $h1-font-size: emCalc(44px);
-// $h2-font-size: emCalc(37px);
-// $h3-font-size: emCalc(27px);
-// $h4-font-size: emCalc(23px);
-// $h5-font-size: emCalc(18px);
-// $h6-font-size: 1em;
-
-// Subheaders
-
-// $subheader-line-height: 1.4;
-// $subheader-font-color: lighten($header-font-color, 30%);
-// $subheader-font-weight: 300;
-// $subheader-top-margin: .2em;
-// $subheader-bottom-margin: .5em;
-
-// <small> styling
-
-// $small-font-size: 60%;
-// $small-font-color: lighten($header-font-color, 30%);
-
-// Paragraphs
-
-// $paragraph-font-family: inherit;
-// $paragraph-font-weight: normal;
-// $paragraph-font-size: 1em;
-// $paragraph-line-height: 1.6;
-// $paragraph-margin-bottom: emCalc(20px);
-// $paragraph-aside-font-size: emCalc(14px);
-// $paragraph-aside-line-height: 1.35;
-// $paragraph-aside-font-style: italic;
-
-// <code> tags
-
-// $code-color: darken($alert-color, 15%);
-// $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
-// $code-font-weight: bold;
-
-// Anchors
-
-// $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: darken($primary-color, 5%);
-
-// <hr> element
-
-// $hr-border-width: 1px;
-// $hr-border-style: solid;
-// $hr-border-color: #ddd;
-// $hr-margin: emCalc(20px);
-
-// Lists
-
-// $list-style-position: outside;
-// $list-side-margin: emCalc(18px);
-// $definition-list-header-weight: bold;
-// $definition-list-header-margin-bottom: .3em;
-// $definition-list-margin-bottom: emCalc(12px);
-
-// Blockquotes
-
-// $blockquote-font-color: lighten($header-font-color, 30%);
-// $blockquote-padding: emCalc(9px) emCalc(20px) 0 emCalc(19px);
-// $blockquote-border: 1px solid #ddd;
-// $blockquote-cite-font-size: emCalc(13px);
-// $blockquote-cite-font-color: lighten($header-font-color, 20%);
-// $blockquote-cite-link-color: $blockquote-cite-font-color;
-
-// Acronym
-
-// $acronym-underline: 1px dotted #ddd;
-
-// Padding and margin
-
-// $microformat-padding: emCalc(10px) emCalc(12px);
-// $microformat-margin: 0 0 emCalc(20px) 0;
-
-// Border styles
-
-// $microformat-border-width: 1px;
-// $microformat-border-style: solid;
-// $microformat-border-color: #ddd;
-
-// Full name font styles
-
-// $microformat-fullname-font-weight: bold;
-// $microformat-fullname-font-size: emCalc(15px);
-
-// Summary font styles
-
-// $microformat-summary-font-weight: bold;
-
-// <abbr> padding
-
-// $microformat-abbr-padding: 0 emCalc(1px);
-
-// <abbr> font styles
-
-// $microformat-abbr-font-weight: bold;
-// $microformat-abbr-font-decoration: none;
-
-//
-// Form Variables
-//
-
-// Base for lots of form spacing and positioning styles
-
-// $form-spacing: emCalc(16px);
-
-// Labels
-
-// $form-label-pointer: pointer;
-// $form-label-font-size: emCalc(14px);
-// $form-label-font-weight: 500;
-// $form-label-font-color: lighten(#000, 30%);
-// $form-label-bottom-margin: emCalc(3px);
-// $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: emCalc(14px);
-// $input-bg-color: #fff;
-// $input-focus-bg-color: darken(#fff, 2%);
-// $input-border-color: darken(#fff, 20%);
-// $input-focus-border-color: darken(#fff, 40%);
-// $input-border-style: solid;
-// $input-border-width: 1px;
-// $input-disabled-bg: #ddd;
-// $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-
-// Fieldset border and spacing.
-
-// $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
-// $fieldset-border-color: #ddd;
-// $fieldset-padding: emCalc(20px);
-// $fieldset-margin: emCalc(18px) 0;
-
-// Legends
-
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
-// $legend-padding: 0 emCalc(3px);
-
-// Prefix and postfix input elements
-
-// $input-prefix-bg: darken(#fff, 5%);
-// $input-prefix-border-color: darken(#fff, 20%);
-// $input-prefix-border-size: 1px;
-// $input-prefix-border-type: solid;
-// $input-prefix-overflow: hidden;
-// $input-prefix-font-color: #333;
-// $input-prefix-font-color-alt: #fff;
-
-// Error states for inputs and labels
-
-// $input-error-message-padding: emCalc(6px) emCalc(4px);
-// $input-error-message-top: -($form-spacing) - emCalc(5px);
-// $input-error-message-font-size: emCalc(12px);
-// $input-error-message-font-weight: bold;
-// $input-error-message-font-color: #fff;
-// $input-error-message-font-color-alt: #333;
-
-// Padding for buttons.
-
-// $button-tny: emCalc(7px);
-// $button-sml: emCalc(9px);
-// $button-med: emCalc(12px);
-// $button-lrg: emCalc(16px);
-
-// Display property.
-
-// $button-display: inline-block;
-// $button-margin-bottom: emCalc(20px);
-
-// Button text styles.
-
-// $button-font-family: inherit;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
-// $button-font-med: emCalc(16px);
-// $button-font-tny: emCalc(11px);
-// $button-font-sml: emCalc(13px);
-// $button-font-lrg: emCalc(20px);
-// $button-font-weight: bold;
-// $button-font-align: center;
-
-// Various hover effects.
-
-// $button-function-factor: 10%;
-
-// Button border styles.
-
-// $button-border-width: 1px;
-// $button-border-style: solid;
-// $button-border-color: darken($primary-color, $button-function-factor);
-
-// Radius used throughout the core.
-
-// $button-radius: $global-radius;
-
-// Opacity for disabled buttons.
-
-// $button-disabled-opacity: 0.6;
-
-//
-// Dropdown Button Variables
-//
-
-// Color of the pip in dropdown buttons
-
-// $dropdown-button-pip-color: #fff;
-// $dropdown-button-pip-color-alt: #333;
-
-// Tiny dropdown buttons
-
-// $dropdown-button-padding-tny: $button-tny * 5;
-// $dropdown-button-pip-size-tny: $button-tny;
-// $dropdown-button-pip-right-tny: $button-tny * 2;
-// $dropdown-button-pip-top-tny: -$button-tny / 2 + emCalc(1px);
-
-// Small dropdown buttons
-
-// $dropdown-button-padding-sml: $button-sml * 5;
-// $dropdown-button-pip-size-sml: $button-sml;
-// $dropdown-button-pip-right-sml: $button-sml * 2;
-// $dropdown-button-pip-top-sml: -$button-sml / 2 + emCalc(1px);
-
-// Medium dropdown buttons
-
-// $dropdown-button-padding-med: $button-med * 4 + emCalc(3px);
-// $dropdown-button-pip-size-med: $button-med - emCalc(3px);
-// $dropdown-button-pip-right-med: $button-med * 2;
-// $dropdown-button-pip-top-med: -$button-med / 2 + emCalc(2px);
-
-// Large dropdown buttons
-
-// $dropdown-button-padding-lrg: $button-lrg * 4;
-// $dropdown-button-pip-size-lrg: $button-lrg - emCalc(6px);
-// $dropdown-button-pip-right-lrg: $button-lrg + emCalc(12px);
-// $dropdown-button-pip-top-lrg: -$button-lrg / 2 + emCalc(3px);
-
-//
-// Split Button Variables
-//
-
-// Shared styles for Split Buttons
-
-// $split-button-function-factor: 15%;
-// $split-button-pip-color: #fff;
-// $split-button-pip-color-alt: #333;
-// $split-button-active-bg-tint: rgba(0,0,0,0.1);
-
-// Tiny split buttons
-
-// $split-button-padding-tny: $button-tny * 9;
-// $split-button-span-width-tny: $button-tny * 6.5;
-// $split-button-pip-size-tny: $button-tny;
-// $split-button-pip-top-tny: $button-tny * 2;
-// $split-button-pip-left-tny: emCalc(-5px);
-
-// Small split buttons
-
-// $split-button-padding-sml: $button-sml * 7;
-// $split-button-span-width-sml: $button-sml * 5;
-// $split-button-pip-size-sml: $button-sml;
-// $split-button-pip-top-sml: $button-sml * 1.5;
-// $split-button-pip-left-sml: emCalc(-9px);
-
-// Medium split buttons
-
-// $split-button-padding-med: $button-med * 6.4;
-// $split-button-span-width-med: $button-med * 4;
-// $split-button-pip-size-med: $button-med - emCalc(3px);
-// $split-button-pip-top-med: $button-med * 1.5;
-// $split-button-pip-left-med: emCalc(-9px);
-
-// Large split buttons
-
-// $split-button-padding-lrg: $button-lrg * 6;
-// $split-button-span-width-lrg: $button-lrg * 3.75;
-// $split-button-pip-size-lrg: $button-lrg - emCalc(6px);
-// $split-button-pip-top-lrg: $button-lrg + emCalc(5px);
-// $split-button-pip-left-lrg: emCalc(-9px);
-
-//
-// Alert Variables
-//
-
-// Alert padding.
-
-// $alert-padding-top: emCalc(11px);
-// $alert-padding-left: $alert-padding-top;
-// $alert-padding-right: $alert-padding-top + emCalc(10px);
-// $alert-padding-bottom: $alert-padding-top + emCalc(1px);
-
-// Text style.
-
-// $alert-font-weight: bold;
-// $alert-font-size: emCalc(14px);
-// $alert-font-color: #fff;
-// $alert-font-color-alt: darken($secondary-color, 60%);
-
-// Close hover effect.
-
-// $alert-function-factor: 10%;
-
-// Border styles.
-
-// $alert-border-style: solid;
-// $alert-border-width: 1px;
-// $alert-border-color: darken($primary-color, $alert-function-factor);
-// $alert-bottom-margin: emCalc(20px);
-
-// Close buttons
-
-// $alert-close-color: #333;
-// $alert-close-position: emCalc(5px);
-// $alert-close-font-size: emCalc(22px);
-// $alert-close-opacity: 0.3;
-// $alert-close-opacity-hover: 0.5;
-// $alert-close-padding: 5px 4px 4px;
-
-// Border radius
-
-// $alert-radius: $global-radius;
-
-//
-// Breadcrumb Variables
-//
-
-// Background color for the breadcrumb container.
-
-// $crumb-bg: lighten($secondary-color, 5%);
-
-// Padding around the breadcrumbs.
-
-// $crumb-padding: emCalc(6px) emCalc(14px) emCalc(9px);
-// $crumb-side-padding: emCalc(12px);
-
-// Border styles.
-
-// $crumb-function-factor: 10%;
-// $crumb-border-size: 1px;
-// $crumb-border-style: solid;
-// $crumb-border-color: darken($crumb-bg, $crumb-function-factor);
-// $crumb-radius: $global-radius;
-
-// Various text styles for breadcrumbs.
-
-// $crumb-font-size: emCalc(11px);
-// $crumb-font-color: $primary-color;
-// $crumb-font-color-current: #333;
-// $crumb-font-color-unavailable: #999;
-// $crumb-font-transform: uppercase;
-// $crumb-link-decor: underline;
-
-// Slash between breadcrumbs
-
-// $crumb-slash-color: #aaa;
-// $crumb-slash: "/";
-
-//
-// Clearing Variables
-//
-
-// Background colors for parts of Clearing.
-
-// $clearing-bg: #111;
-// $clearing-caption-bg: $clearing-bg;
-// $clearing-carousel-bg: #111;
-// $clearing-img-bg: $clearing-bg;
-
-// Close button
-
-// $clearing-close-color: #fff;
-// $clearing-close-size: 40px;
-
-// Style the arrows
-
-// $clearing-arrow-size: 16px;
-// $clearing-arrow-color: $clearing-close-color;
-
-// Style captions
-
-// $clearing-caption-font-color: #fff;
-// $clearing-caption-padding: 10px 30px;
-
-// Make the image and carousel height and style
-
-// $clearing-active-img-height: 75%;
-// $clearing-carousel-height: 150px;
-// $clearing-carousel-thumb-width: 175px;
-// $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255);
-
-//
-// Custom Form Variables
-//
-
-// Basic form styles input styles
-
-// $custom-form-border-color: #ccc;
-// $custom-form-border-size: 1px;
-// $custom-form-bg: #fff;
-// $custom-form-bg-disabled: #ddd;
-// $custom-form-input-size: 16px;
-// $custom-form-check-color: #222;
-// $custom-form-check-size: 14px;
-// $custom-form-radio-size: 8px;
-// $custom-form-checkbox-radius: 0px;
-
-// Custom select form element.
-
-// $custom-select-bg: #fff;
-// $custom-select-fade-to-color: #f3f3f3;
-// $custom-select-border-color: #ddd;
-// $custom-select-triangle-color: #aaa;
-// $custom-select-triangle-color-open: #222;
-// $custom-select-height: emCalc(13px) + ($form-spacing * 1.5);
-// $custom-select-margin-bottom: emCalc(20px);
-// $custom-select-font-color-selected: #141414;
-// $custom-select-disabled-color: #888;
-
-// Custom select dropdown element.
-
-// $custom-dropdown-height: 200px;
-// $custom-dropdown-bg: #fff;
-// $custom-dropdown-border-color: darken(#fff, 20%);
-// $custom-dropdown-border-width: 1px;
-// $custom-dropdown-border-style: solid;
-// $custom-dropdown-font-color: #555;
-// $custom-dropdown-font-size: emCalc(14px);
-// $custom-dropdown-color-selected: #eeeeee;
-// $custom-dropdown-font-color-selected: #000;
-// $custom-dropdown-shadow: 0 2px 2px 0px rgba(0,0,0,0.1);
-// $custom-dropdown-offset-top: none;
-// $custom-dropdown-list-padding: emCalc(4px);
-// $custom-dropdown-left-padding: emCalc(6px);
-// $custom-dropdown-right-padding: emCalc(38px);
-// $custom-dropdown-list-item-min-height: emCalc(24px);
-
-//
-// Dropdown Variables
-//
-
-// Height and width styles.
-
-// $f-dropdown-max-width: 200px;
-// $f-dropdown-height: auto;
-// $f-dropdown-max-height: none;
-// $f-dropdown-margin-top: 2px;
-
-// Background color
-
-// $f-dropdown-bg: #fff;
-
-// Border styles for dropdowns.
-
-// $f-dropdown-border-style: solid;
-// $f-dropdown-border-width: 1px;
-// $f-dropdown-border-color: darken(#fff, 20%);
-
-// Triangle pip.
-
-// $f-dropdown-triangle-size: 6px;
-// $f-dropdown-triangle-color: #fff;
-// $f-dropdown-triangle-side-offset: 10px;
-
-// List elements.
-
-// $f-dropdown-list-style: none;
-// $f-dropdown-font-color: #555;
-// $f-dropdown-font-size: emCalc(14px);
-// $f-dropdown-list-padding: emCalc(5px) emCalc(10px);
-// $f-dropdown-line-height: emCalc(18px);
-// $f-dropdown-list-hover-bg: #eeeeee;
-// $dropdown-mobile-left: 0;
-
-// When the dropdown has custom content.
-
-// $f-dropdown-content-padding: emCalc(20px);
-
-//
-// Flex Video Variables
-//
-
-// Video container padding and margins
-
-// $flex-video-padding-top: emCalc(25px);
-// $flex-video-padding-bottom: 67.5%;
-// $flex-video-margin-bottom: emCalc(16px);
-
-// Widescreen bottom padding
-
-// $flex-video-widescreen-padding-bottom: 57.25%;
-
-//
-// Inline List Variables
-//
-
-// Margins and padding of the inline list.
-
-// $inline-list-margin-bottom: emCalc(17px) emCalc(-22px );
-// $inline-list-margin: 0 0;
-// $inline-list-padding: 0;
-
-// Overflow of the inline list.
-
-// $inline-list-overflow: hidden;
-
-// List items
-
-// $inline-list-display: block;
-
-// Elments within list items
-
-// $inline-list-children-display: block;
-
-//
-// Joyride Variables
-//
-
-// Joyride styles
-
-// $joyride-tip-bg: rgb(0,0,0);
-// $joyride-tip-default-width: 300px;
-// $joyride-tip-padding: emCalc(18px) emCalc(20px) emCalc(24px);
-// $joyride-tip-border: solid 1px #555;
-// $joyride-tip-radius: 4px;
-// $joyride-tip-position-offset: 22px;
-
-// Tip font styles
-
-// $joyride-tip-font-color: #fff;
-// $joyride-tip-font-size: emCalc(14px);
-// $joyride-tip-header-weight: bold;
-
-// Changes the nub size
-
-// $joyride-tip-nub-size: 14px;
-
-// Adjusts the styles for the timer when its enabled
-
-// $joyride-tip-timer-width: 50px;
-// $joyride-tip-timer-height: 3px;
-// $joyride-tip-timer-color: #666;
-
-// Changes up the styles for the close button
-
-// $joyride-tip-close-color: #777;
-// $joyride-tip-close-size: 30px;
-// $joyride-tip-close-weight: normal;
-
-// When Joyride is filling the screen, style for the bg
-
-// $joyride-screenfill: rgba(0,0,0,0.5);
-
-//
-// Keystroke Variables
-//
-
-// Text styles.
-
-// $keystroke-font: "Consolas", "Menlo", "Courier", monospace;
-// $keystroke-font-size: emCalc(15px);
-// $keystroke-font-color: #222;
-// $keystroke-font-color-alt: #fff;
-// $keystroke-function-factor: 7%;
-
-// Keystroke padding.
-
-// $keystroke-padding: emCalc(2px) emCalc(4px) emCalc(0px);
-
-// Background and border styles.
-
-// $keystroke-bg: darken(#fff, $keystroke-function-factor);
-// $keystroke-border-style: solid;
-// $keystroke-border-width: 1px;
-// $keystroke-border-color: darken($keystroke-bg, $keystroke-function-factor);
-// $keystroke-radius: $global-radius;
-
-//
-// Label Variables
-//
-
-// Style the labels
-
-// $label-padding: emCalc(3px) emCalc(10px) emCalc(4px);
-// $label-radius: $global-radius;
-
-// We use these to style the label text
-
-// $label-font-sizing: emCalc(14px);
-// $label-font-weight: bold;
-// $label-font-color: #333;
-// $label-font-color-alt: #fff;
-
-//
-// Magellan Variables
-//
-
-// Basic visual styles
-
-// $magellan-bg: #fff;
-// $magellan-padding: 10px;
-
-//
-// Orbit Settings
-//
-
-// Caption styles
-
-// $orbit-container-bg: #f5f5f5;
-// $orbit-caption-bg-old: rgb(0,0,0);
-// $orbit-caption-bg: rgba(0,0,0,0.6);
-// $orbit-caption-font-color: #fff;
-
-// Left/right nav styles
-
-// $orbit-nav-bg-old: rgb(0,0,0);
-// $orbit-nav-bg: rgba(0,0,0,0.6);
-
-// Timer styles
-
-// $orbit-timer-bg-old: rgb(0,0,0);
-// $orbit-timer-bg: rgba(0,0,0,0.6);
-
-// Bullet nav styles
-
-// $orbit-bullet-nav-color: #999;
-// $orbit-bullet-nav-color-active: #222;
-
-// Slide numbers
-
-// $orbit-slide-number-bg: rgba(0,0,0,0);
-// $orbit-slide-number-font-color: #fff;
-// $orbit-slide-number-padding: emCalc(5px);
-
-// Margin for when Orbit is stacked on small screens
-
-// $stack-on-small-margin-bottom: emCalc(20px); // Doesn't quite work yet
-
-//
-// Pagination Variables
-//
-
-// Pagination container
-
-// $pagination-height: emCalc(24px);
-// $pagination-margin: emCalc(-5px);
-
-// List-item properties
-
-// $pagination-li-float: $default-float;
-// $pagination-li-height: emCalc(24px);
-// $pagination-li-font-color: #222;
-// $pagination-li-font-size: emCalc(14px);
-// $pagination-li-margin: emCalc(5px);
-
-// Pagination anchor links
-
-// $pagination-link-pad: emCalc(1px) emCalc(7px) emCalc(1px);
-// $pagination-link-font-color: #999;
-// $pagination-link-active-bg: darken(#fff, 10%);
-
-// Disabled anchor links
-
-// $pagination-link-unavailable-cursor: $cursor-default-value;
-// $pagination-link-unavailable-font-color: #999;
-// $pagination-link-unavailable-bg-active: transparent;
-
-// Currently selected anchor links
-
-// $pagination-link-current-background: $primary-color;
-// $pagination-link-current-font-color: #fff;
-// $pagination-link-current-font-weight: bold;
-// $pagination-link-current-cursor: $cursor-default-value;
-// $pagination-link-current-active-bg: $primary-color;
-
-//
-// Panel Variables
-//
-
-// Background and border styles
-
-// $panel-bg: darken(#fff, 5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
-
-// Control how much we darken things on hover
-
-// $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
-
-// Inner padding and bottom margin
-
-// $panel-margin-bottom: emCalc(20px);
-// $panel-padding: emCalc(20px);
-
-// Font colors
-
-// $panel-font-color: #333;
-// $panel-font-color-alt: #fff;
-
-//
-// Pricing Table Variables
-//
-
-// Border color
-
-// $price-table-border: solid 1px #ddd;
-
-// Bottom margin of the pricing table
-
-// $price-table-margin-bottom: emCalc(20px);
-
-// Control the title styles
-
-// $price-title-bg: #ddd;
-// $price-title-padding: emCalc(15px) emCalc(20px);
-// $price-title-align: center;
-// $price-title-color: #333;
-// $price-title-weight: bold;
-// $price-title-size: emCalc(16px);
-
-// Control the price styles
-
-// $price-money-bg: #eee;
-// $price-money-padding: emCalc(15px) emCalc(20px);
-// $price-money-align: center;
-// $price-money-color: #333;
-// $price-money-weight: normal;
-// $price-money-size: emCalc(20px);
-
-// Description styles
-
-// $price-bg: #fff;
-// $price-desc-color: #777;
-// $price-desc-padding: emCalc(15px);
-// $price-desc-align: center;
-// $price-desc-font-size: emCalc(12px);
-// $price-desc-weight: normal;
-// $price-desc-line-height: 1.4;
-// $price-desc-bottom-border: dotted 1px #ddd;
-
-// List item styles
-
-// $price-item-color: #333;
-// $price-item-padding: emCalc(15px);
-// $price-item-align: center;
-// $price-item-font-size: emCalc(14px);
-// $price-item-weight: normal;
-// $price-item-bottom-border: dotted 1px #ddd;
-
-// CTA area styles
-
-// $price-cta-bg: #f5f5f5;
-// $price-cta-align: center;
-// $price-cta-padding: emCalc(20px) emCalc(20px) 0;
-
-//
-// Progress Bar Variables
-//
-
-// Progress bar height
-
-// $progress-bar-height: emCalc(25px);
-// $progress-bar-color: transparent;
-
-// Border styles
-
-// $progress-bar-border-color: darken(#fff, 20%);
-// $progress-bar-border-size: 1px;
-// $progress-bar-border-style: solid;
-// $progress-bar-border-radius: $global-radius;
-
-// Margin & padding
-
-// $progress-bar-pad: emCalc(2px);
-// $progress-bar-margin-bottom: emCalc(10px);
-
-// Meter colors
-
-// $progress-meter-color: $primary-color;
-// $progress-meter-secondary-color: $secondary-color;
-// $progress-meter-success-color: $success-color;
-// $progress-meter-alert-color: $alert-color;
-
-//
-// Reveal Variables
-//
-
-// Reveal overlay.
-
-// $reveal-overlay-bg: rgba(#000, .45);
-// $reveal-overlay-bg-old: #000;
-
-// Modal itself.
-
-// $reveal-modal-bg: #fff;
-// $reveal-position-top: 50px;
-// $reveal-default-width: 80%;
-// $reveal-modal-padding: emCalc(20px);
-// $reveal-box-shadow: 0 0 10px rgba(#000,.4);
-
-// Reveal close button
-
-// $reveal-close-font-size: emCalc(22px);
-// $reveal-close-top: emCalc(8px);
-// $reveal-close-side: emCalc(11px);
-// $reveal-close-color: #aaa;
-// $reveal-close-weight: bold;
-
-// Modal border
-
-// $reveal-border-style: solid;
-// $reveal-border-width: 1px;
-// $reveal-border-color: #666;
-
-//
-// Section Variables
-//
-
-// Padding and hover factor
-
-// $section-padding: emCalc(15px);
-// $section-function-factor: 10%;
-
-// Titles
-
-// $section-title-color: #333;
-// $section-title-bg: #efefef;
-// $section-title-bg-active: darken($section-title-bg, $section-function-factor);
-// $section-title-bg-active-tabs: #fff;
-
-// Border size
-
-// $section-border-size: 1px;
-// $section-border-style: solid;
-// $section-border-color: #ccc;
-
-// Color of the background and some size options
-
-// $section-content-bg: #fff;
-// $section-vertical-nav-min-width: emCalc(200px);
-// $section-vertical-tabs-title-width: emCalc(200px);
-// $section-bottom-margin: emCalc(20px);
-
-//
-// Side Nav Variables
-//
-
-// Padding
-
-// $side-nav-padding: emCalc(14px) 0;
-
-// List styles
-
-// $side-nav-list-type: none;
-// $side-nav-list-position: inside;
-// $side-nav-list-margin: 0 0 emCalc(7px) 0;
-
-// Link styles
-
-// $side-nav-link-color: $primary-color;
-// $side-nav-link-color-active: lighten(#000, 30%);
-// $side-nav-font-size: emCalc(14px);
-// $side-nav-font-weight: bold;
-
-// Border styles
-
-// $side-nav-divider-size: 1px;
-// $side-nav-divider-style: solid;
-// $side-nav-divider-color: darken(#fff, 10%);
-
-//
-// Sub Nav Variables
-//
-
-// Margin and padding
-
-// $sub-nav-list-margin: emCalc(-4px) 0 emCalc(18px);
-// $sub-nav-list-padding-top: emCalc(4px);
-
-// Definition
-
-// $sub-nav-font-size: emCalc(14px);
-// $sub-nav-font-color: #999;
-// $sub-nav-font-weight: normal;
-// $sub-nav-text-decoration: none;
-// $sub-nav-border-radius: 1000px;
-
-// Active item styles
-
-// $sub-nav-active-font-weight: bold;
-// $sub-nav-active-bg: $primary-color;
-// $sub-nav-active-color: #fff;
-// $sub-nav-active-padding: emCalc(3px) emCalc(9px);
-// $sub-nav-active-cursor: $cursor-default-value;
-
-//
-// Switch Variables
-//
-
-// Border styles and background colors for the switch container
-
-// $switch-border-color: darken(#fff, 20%);
-// $switch-border-style: solid;
-// $switch-border-width: 1px;
-// $switch-bg: #fff;
-
-// Switch heights for our default classes
-
-// $switch-height-tny: 22px;
-// $switch-height-sml: 28px;
-// $switch-height-med: 36px;
-// $switch-height-lrg: 44px;
-// $switch-bottom-margin: emCalc(20px);
-
-// Font sizes for our classes.
-
-// $switch-font-size-tny: 11px;
-// $switch-font-size-sml: 12px;
-// $switch-font-size-med: 14px;
-// $switch-font-size-lrg: 17px;
-// $switch-label-side-padding: 6px;
-
-// Switch-paddle
-
-// $switch-paddle-bg: #fff;
-// $switch-paddle-fade-to-color: darken($switch-paddle-bg, 10%);
-// $switch-paddle-border-color: darken($switch-paddle-bg, 35%);
-// $switch-paddle-border-width: 1px;
-// $switch-paddle-border-style: solid;
-// $switch-paddle-transition-speed: .1s;
-// $switch-paddle-transition-ease: ease-out;
-// $switch-positive-color: lighten($success-color, 50%);
-// $switch-negative-color: #f5f5f5;
-
-// Outline Style for tabbing through switches
-
-// $switch-label-outline: 1px dotted #888;
-
-//
-// Table Variables
-//
-
-// Background color for the table and even rows
-
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9;
-
-// Table cell border style
-
-// $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
-
-// Table head styles
-
-// $table-head-bg: #f5f5f5;
-// $table-head-font-size: emCalc(14px);
-// $table-head-font-color: #222;
-// $table-head-font-weight: bold;
-// $table-head-padding: emCalc(8px) emCalc(10px) emCalc(10px);
-
-// Row padding and font styles
-
-// $table-row-padding: emCalc(9px) emCalc(10px);
-// $table-row-font-size: emCalc(14px);
-// $table-row-font-color: #222;
-// $table-line-height: emCalc(18px);
-
-// Display and margin of tables
-
-// $table-display: table-cell;
-// $table-margin-bottom: emCalc(20px);
-
-//
-// Image Thumbnail Variables
-//
-
-// Border styles
-
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
-// $thumb-border-color: #fff;
-// $thumb-box-shadow: 0 0 0 1px rgba(#000,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
-
-// Radius and transition speed for thumbs
-
-// $thumb-radius: $global-radius;
-// $thumb-transition-speed: 200ms;
-
-//
-// Tooltip Variables
-//
-
-// $has-tip-border-bottom: dotted 1px #ccc;
-// $has-tip-font-weight: bold;
-// $has-tip-font-color: #333;
-// $has-tip-border-bottom-hover: dotted 1px darken($primary-color, 20%);
-// $has-tip-font-color-hover: $primary-color;
-// $has-tip-cursor-type: help;
-
-// $tooltip-padding: emCalc(8px);
-// $tooltip-bg: #000;
-// $tooltip-font-size: emCalc(15px);
-// $tooltip-font-weight: bold;
-// $tooltip-font-color: #fff;
-// $tooltip-line-height: 1.3;
-// $tooltip-close-font-size: emCalc(10px);
-// $tooltip-close-font-weight: normal;
-// $tooltip-close-font-color: #888;
-// $tooltip-font-size-sml: emCalc(14px);
-// $tooltip-radius: $global-radius;
-// $tooltip-pip-size: 5px;
-
-//
-// Top Bar Variables
-//
-
-// Background color for the top bar
-
-$topbar-bg:                            #B20404;
-
-// Height and margin
-
-// $topbar-height:                        45px;
-// $topbar-margin-bottom:                 emCalc(30px);
-
-// Control Input height for top bar
-
-// $topbar-input-height:                  2.45em;
-
-// Controlling the styles for the title in the top bar
-
-// $topbar-title-weight:                  bold;
-// $topbar-title-font-size:               emCalc(17px);
-
-// Style the top bar dropdown elements
-
-// $topbar-dropdown-bg:                   #222;
-// $topbar-dropdown-link-color:           #fff;
-// $topbar-dropdown-link-bg:              lighten($topbar-bg, 5%);
-// $topbar-dropdown-toggle-size:          5px;
-// $topbar-dropdown-toggle-color:         #fff;
-// $topbar-dropdown-toggle-alpha:         0.5;
-
-// Set the link colors and styles for top-level nav
-
-// $topbar-link-color:                    #fff;
-// $topbar-link-color-hover:              #fff;
-// $topbar-link-color-active:             #fff;
-// $topbar-link-weight:                   bold;
-// $topbar-link-font-size:                emCalc(13px);
-// $topbar-link-hover-lightness:          -30%; // Darken by 30%
-// $topbar-link-bg-hover:                 darken($topbar-bg, 3%);
-// $topbar-link-bg-active:                darken($topbar-bg, 3%);
-
-// $topbar-dropdown-label-color:          #555;
-// $topbar-dropdown-label-text-transform: uppercase;
-// $topbar-dropdown-label-font-weight:    bold;
-// $topbar-dropdown-label-font-size:      emCalc(10px);
-
-// Top menu icon styles
-
-// $topbar-menu-link-transform:           uppercase;
-// $topbar-menu-link-font-size:           emCalc(13px);
-// $topbar-menu-link-weight:              bold;
-// $topbar-menu-link-color:               #fff;
-// $topbar-menu-icon-color:               #fff;
-// $topbar-menu-link-color-toggled:       #888;
-// $topbar-menu-icon-color-toggled:       #888;
-
-// Transitions and breakpoint styles
-
-// $topbar-transition-speed:              300ms;
-// $topbar-breakpoint:                    emCalc(940px); // Change to 9999px for always mobile layout
-// $topbar-media-query:                   "only screen and (min-width:"#{$topbar-breakpoint}")";
-
-// Divider Styles
-
-// $topbar-divider-border-bottom:         solid 1px lighten($topbar-bg, 10%);
-// $topbar-divider-border-top:            solid 1px darken($topbar-bg, 10%);
-
-// Sticky Class
-
-// $topbar-sticky-class:                  ".sticky";
-:@children[oo:Sass::Tree::CommentNode
-;i:
-@type:silent;	[ :@options{ :@value["%/*
- * Foundation Variables
- * */o;
-
-;i
-;;;	[ ;@
-;["õ/* The default font-size is set to 100% of the browser style sheet (usually 16px)
- * for compatibility with brower-based text zoom or user-set defaults. */o:Sass::Tree::VariableNode;i:
-@name"base-font-size;	[ :@guarded"!default;@
-:
-@expro:Sass::Script::Number:@denominator_units[ ;i:@numerator_units["%;@
-:@original"	100%;iio;
-
-;i;;;	[ ;@
-;["^/* $base-line-height is 24px while $base-font-size is 16px
- * $base-line-height: 150%; */o;
-
-;i;;;	[ ;@
-;["M/* This is the default html and body font-size for the base em value. */o;
-
-;i;;;	[ ;@
-;["/* Since the typical default browser font-size is 16px, that makes the calculation for grid size.
- * If you want your base font-size to be a different size and not have it effect grid size too,
- * set the value of $em-base to $base-font-size ($em-base: $base-font-size;) */o;;i;"em-base;	[ ;"!default;@
-;o;;[ ;i;["px;@
-;"	16px;io;
-
-;i;;;	[ ;@
-;["`/* Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px) */o:Sass::Tree::FunctionNode;T;i:@splat0;"emCalc;	[o:Sass::Tree::ReturnNode	;i;	[ ;@
-;o:Sass::Script::Operation
-;i:@operator:
-times;@
-:@operand2o;;[ ;i;["em;@
-;"1em;i:@operand1o;
-;i;:div;@
-;o:Sass::Script::Variable	;i;"em-base;@
-:@underscored_name"em_base;o; 	;i;"pxWidth;@
-;!"pxWidth;@
-:
-@args[[o; ;"pxWidth;@
-;!"pxWidth0o;
-
-;i;;;	[ ;@
-;["=/* Change whether or not you include browser prefixes */o;;i;"experimental;	[ ;"!default;@
-;o:Sass::Script::Bool;i;@
-;To;
-
-;i ;;;	[ ;@
-;[" /* Various global styles */o;
-
-;i";;;	[ ;@
-;[" /* $default-float: left; */o;
-
-;i$;;;	[ ;@
-;["æ/* $body-bg: #fff;
- * $body-font-color: #222;
- * $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
- * $body-font-weight: normal;
- * $body-font-style: normal; */o;
-
-;i*;;;	[ ;@
-;["/* Font-smoothing */o;
-
-;i,;;;	[ ;@
-;["(/* $font-smoothing: antialiased; */o;
-
-;i.;;;	[ ;@
-;[""/* Text direction settings */o;
-
-;i0;;;	[ ;@
-;[" /* $text-direction: ltr; */o;
-
-;i2;;;	[ ;@
-;["/* Colors */o;;i4;"primary-color;	[ ;0;@
-;o:Sass::Script::Color	;i4:@attrs{	:redi≤:
-alphai:
-greeni	:	bluei	;@
-;0o;
-
-;i5;;;	[ ;@
-;["[/* $secondary-color: #e9e9e9;
- * $alert-color: #c60f13;
- * $success-color: #5da423; */o;;i8;"tinted-background-color;	[ ;0;@
-;o;$	;i8;%{	;&i‡;'i;(iﬁ;)iŒ;@
-;0o;
-
-;i:;;;	[ ;@
-;["G/* Make sure border radius matches unless we want it different. */o;
-
-;i<;;;	[ ;@
-;[";/* $global-radius: 3px;
- * $global-rounded: 1000px; */o;
-
-;i?;;;	[ ;@
-;["4/* Inset shadow shiny edges and depressions. */o;
-
-;iA;;;	[ ;@
-;["x/* $shiny-edge-size: 0 1px 0;
- * $shiny-edge-color: rgba(#fff, .5);
- * $shiny-edge-active-color: rgba(#000, .2); */o;
-
-;iE;;;	[ ;@
-;["L/* Control whether or not CSS classes come through in the CSS files. */o;
-
-;iG;;;	[ ;@
-;["/* $include-html-classes: true;
- * $include-print-styles: true;
- * $include-html-global-classes: $include-html-classes;
- * $include-html-type-classes: $include-html-classes;
- * $include-html-grid-classes: $include-html-classes;
- * $include-html-visibility-classes: $include-html-classes;
- * $include-html-button-classes: $include-html-classes;
- * $include-html-form-classes: $include-html-classes;
- * $include-html-custom-form-classes: $include-html-classes;
- * $include-html-media-classes: $include-html-classes;
- * $include-html-section-classes: $include-html-classes;
- * $include-html-orbit-classes: $include-html-classes;
- * $include-html-reveal-classes: $include-html-classes;
- * $include-html-joyride-classes: $include-html-classes;
- * $include-html-clearing-classes: $include-html-classes;
- * $include-html-alert-classes: $include-html-classes;
- * $include-html-nav-classes: $include-html-classes;
- * $include-html-top-bar-classes: $include-html-classes;
- * $include-html-label-classes: $include-html-classes;
- * $include-html-panel-classes: $include-html-classes;
- * $include-html-pricing-classes: $include-html-classes;
- * $include-html-progress-classes: $include-html-classes;
- * $include-html-magellan-classes: $include-html-classes;
- * $include-html-tooltip-classes: $include-html-classes; */o;
-
-;i`;;;	[ ;@
-;["/* Media Queries */o;
-
-;ib;;;	[ ;@
-;["U/* $small-screen: 768px;
- * $medium-screen: 1280px;
- * $large-screen: 1440px; */o;
-
-;if;;;	[ ;@
-;["G/* $screen: "only screen";
- * $small: "only screen and (min-width: #{$small-screen})";
- * $medium: "only screen and (min-width: #{$medium-screen})";
- * $large: "only screen and (min-width: #{$large-screen})";
- * $landscape: "only screen and (orientation: landscape)";
- * $portrait: "only screen and (orientation: portrait)"; */o;
-
-;im;;;	[ ;@
-;["/*// Cursors */o;
-
-;io;;;	[ ;@
-;["/*Custom use example -> $cursor-default-value: url(http://cursors-site.net/path/to/custom/cursor/default.cur),progress; */o;
-
-;iq;;;	[ ;@
-;["î/* $cursor-crosshair-value: "crosshair";
- * $cursor-default-value: "default";
- * $cursor-pointer-value: "pointer";
- * $cursor-help-value: "help"; */o;
-
-;iv;;;	[ ;@
-;["/*
- * Grid Variables
- * */o;
-
-;iz;;;	[ ;@
-;["^/* $row-width: emCalc(1000px);
- * $column-gutter: emCalc(30px);
- * $total-columns: 12; */o;
-
-;i~;;;	[ ;@
-;["%/*
- * Block Grid Variables
- * */o;
-
-;i};;;	[ ;@
-;["8/* Maximum number of block grid elements per row */o;
-
-;i;;;	[ ;@
-;["R/* $block-grid-elements: 12;
- * $block-grid-default-spacing: emCalc(20px); */o;
-
-;iÇ;;;	[ ;@
-;["_/* Enables media queries for block-grid classes. Set to false if writing semantic HTML. */o;
-
-;iÑ;;;	[ ;@
-;["+/* $block-grid-media-queries: true; */o;
-
-;iÜ;;;	[ ;@
-;["%/*
- * Typography Variables
- * */o;
-
-;iä;;;	[ ;@
-;["/* Heading font styles */o;
-
-;iå;;;	[ ;@
-;["Î/* $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
- * $header-font-weight: bold;
- * $header-font-style: normal;
- * $header-font-color: #222;
- * $header-line-height: 1.4;
- * $header-top-margin: .2em; */o;;ií;"header-bottom-margin;	[ ;0;@
-;o;;[ ;ií;["em;@
-;"
-0.2em;f0.20000000000000001 ôöo;
-
-;iì;;;	[ ;@
-;["6/* $header-text-rendering: optimizeLegibility; */o;
-
-;iï;;;	[ ;@
-;["/* Heading font sizes */o;
-
-;ió;;;	[ ;@
-;["π/* $h1-font-size: emCalc(44px);
- * $h2-font-size: emCalc(37px);
- * $h3-font-size: emCalc(27px);
- * $h4-font-size: emCalc(23px);
- * $h5-font-size: emCalc(18px);
- * $h6-font-size: 1em; */o;
-
-;iû;;;	[ ;@
-;["/* Subheaders */o;
-
-;i†;;;	[ ;@
-;["¡/* $subheader-line-height: 1.4;
- * $subheader-font-color: lighten($header-font-color, 30%);
- * $subheader-font-weight: 300;
- * $subheader-top-margin: .2em;
- * $subheader-bottom-margin: .5em; */o;
-
-;i¶;;;	[ ;@
-;["/* <small> styling */o;
-
-;i®;;;	[ ;@
-;["Y/* $small-font-size: 60%;
- * $small-font-color: lighten($header-font-color, 30%); */o;
-
-;i´;;;	[ ;@
-;["/* Paragraphs */o;
-
-;i≠;;;	[ ;@
-;["./* $paragraph-font-family: inherit;
- * $paragraph-font-weight: normal;
- * $paragraph-font-size: 1em;
- * $paragraph-line-height: 1.6;
- * $paragraph-margin-bottom: emCalc(20px);
- * $paragraph-aside-font-size: emCalc(14px);
- * $paragraph-aside-line-height: 1.35;
- * $paragraph-aside-font-style: italic; */o;
-
-;i∂;;;	[ ;@
-;["/* <code> tags */o;
-
-;i∏;;;	[ ;@
-;["ê/* $code-color: darken($alert-color, 15%);
- * $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
- * $code-font-weight: bold; */o;
-
-;iº;;;	[ ;@
-;["/* Anchors */o;
-
-;iæ;;;	[ ;@
-;["Ñ/* $anchor-text-decoration: none;
- * $anchor-font-color: $primary-color;
- * $anchor-font-color-hover: darken($primary-color, 5%); */o;
-
-;i¬;;;	[ ;@
-;["/* <hr> element */o;
-
-;iƒ;;;	[ ;@
-;["u/* $hr-border-width: 1px;
- * $hr-border-style: solid;
- * $hr-border-color: #ddd;
- * $hr-margin: emCalc(20px); */o;
-
-;i…;;;	[ ;@
-;["/* Lists */o;
-
-;iÀ;;;	[ ;@
-;["“/* $list-style-position: outside;
- * $list-side-margin: emCalc(18px);
- * $definition-list-header-weight: bold;
- * $definition-list-header-margin-bottom: .3em;
- * $definition-list-margin-bottom: emCalc(12px); */o;
-
-;i—;;;	[ ;@
-;["/* Blockquotes */o;
-
-;i”;;;	[ ;@
-;["S/* $blockquote-font-color: lighten($header-font-color, 30%);
- * $blockquote-padding: emCalc(9px) emCalc(20px) 0 emCalc(19px);
- * $blockquote-border: 1px solid #ddd;
- * $blockquote-cite-font-size: emCalc(13px);
- * $blockquote-cite-font-color: lighten($header-font-color, 20%);
- * $blockquote-cite-link-color: $blockquote-cite-font-color; */o;
-
-;i⁄;;;	[ ;@
-;["/* Acronym */o;
-
-;i‹;;;	[ ;@
-;["//* $acronym-underline: 1px dotted #ddd; */o;
-
-;iﬁ;;;	[ ;@
-;["/* Padding and margin */o;
-
-;i‡;;;	[ ;@
-;["g/* $microformat-padding: emCalc(10px) emCalc(12px);
- * $microformat-margin: 0 0 emCalc(20px) 0; */o;
-
-;i„;;;	[ ;@
-;["/* Border styles */o;
-
-;iÂ;;;	[ ;@
-;["s/* $microformat-border-width: 1px;
- * $microformat-border-style: solid;
- * $microformat-border-color: #ddd; */o;
-
-;iÈ;;;	[ ;@
-;[" /* Full name font styles */o;
-
-;iÎ;;;	[ ;@
-;["e/* $microformat-fullname-font-weight: bold;
- * $microformat-fullname-font-size: emCalc(15px); */o;
-
-;iÓ;;;	[ ;@
-;["/* Summary font styles */o;
-
-;i;;;	[ ;@
-;["2/* $microformat-summary-font-weight: bold; */o;
-
-;iÚ;;;	[ ;@
-;["/* <abbr> padding */o;
-
-;iÙ;;;	[ ;@
-;["4/* $microformat-abbr-padding: 0 emCalc(1px); */o;
-
-;iˆ;;;	[ ;@
-;["/* <abbr> font styles */o;
-
-;i¯;;;	[ ;@
-;["[/* $microformat-abbr-font-weight: bold;
- * $microformat-abbr-font-decoration: none; */o;
-
-;i˚;;;	[ ;@
-;["/*
- * Form Variables
- * */o;
-
-;iˇ;;;	[ ;@
-;["?/* Base for lots of form spacing and positioning styles */o;
-
-;i;;;	[ ;@
-;["'/* $form-spacing: emCalc(16px); */o;
-
-;i;;;	[ ;@
-;["/* Labels */o;
-
-;i;;;	[ ;@
-;["c/* $form-label-pointer: pointer;
- * $form-label-font-size: emCalc(14px);
- * $form-label-font-weight: 500;
- * $form-label-font-color: lighten(#000, 30%);
- * $form-label-bottom-margin: emCalc(3px);
- * $input-font-family: inherit;
- * $input-font-color: rgba(0,0,0,0.75);
- * $input-font-size: emCalc(14px);
- * $input-bg-color: #fff;
- * $input-focus-bg-color: darken(#fff, 2%);
- * $input-border-color: darken(#fff, 20%);
- * $input-focus-border-color: darken(#fff, 40%);
- * $input-border-style: solid;
- * $input-border-width: 1px;
- * $input-disabled-bg: #ddd;
- * $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); */o;
-
-;i;;;	[ ;@
-;["'/* Fieldset border and spacing. */o;
-
-;i;;;	[ ;@
-;["Æ/* $fieldset-border-style: solid;
- * $fieldset-border-width: 1px;
- * $fieldset-border-color: #ddd;
- * $fieldset-padding: emCalc(20px);
- * $fieldset-margin: emCalc(18px) 0; */o;
-
-;i;;;	[ ;@
-;["/* Legends */o;
-
-;i ;;;	[ ;@
-;["]/* $legend-bg: #fff;
- * $legend-font-weight: bold;
- * $legend-padding: 0 emCalc(3px); */o;
-
-;i$;;;	[ ;@
-;[",/* Prefix and postfix input elements */o;
-
-;i&;;;	[ ;@
-;["/* $input-prefix-bg: darken(#fff, 5%);
- * $input-prefix-border-color: darken(#fff, 20%);
- * $input-prefix-border-size: 1px;
- * $input-prefix-border-type: solid;
- * $input-prefix-overflow: hidden;
- * $input-prefix-font-color: #333;
- * $input-prefix-font-color-alt: #fff; */o;
-
-;i.;;;	[ ;@
-;["-/* Error states for inputs and labels */o;
-
-;i0;;;	[ ;@
-;["-/* $input-error-message-padding: emCalc(6px) emCalc(4px);
- * $input-error-message-top: -($form-spacing) - emCalc(5px);
- * $input-error-message-font-size: emCalc(12px);
- * $input-error-message-font-weight: bold;
- * $input-error-message-font-color: #fff;
- * $input-error-message-font-color-alt: #333; */o;
-
-;i7;;;	[ ;@
-;["/* Padding for buttons. */o;
-
-;i9;;;	[ ;@
-;["}/* $button-tny: emCalc(7px);
- * $button-sml: emCalc(9px);
- * $button-med: emCalc(12px);
- * $button-lrg: emCalc(16px); */o;
-
-;i>;;;	[ ;@
-;["/* Display property. */o;
-
-;i@;;;	[ ;@
-;["Q/* $button-display: inline-block;
- * $button-margin-bottom: emCalc(20px); */o;
-
-;iC;;;	[ ;@
-;["/* Button text styles. */o;
-
-;iE;;;	[ ;@
-;["*/* $button-font-family: inherit;
- * $button-font-color: #fff;
- * $button-font-color-alt: #333;
- * $button-font-med: emCalc(16px);
- * $button-font-tny: emCalc(11px);
- * $button-font-sml: emCalc(13px);
- * $button-font-lrg: emCalc(20px);
- * $button-font-weight: bold;
- * $button-font-align: center; */o;
-
-;iO;;;	[ ;@
-;["!/* Various hover effects. */o;
-
-;iQ;;;	[ ;@
-;["(/* $button-function-factor: 10%; */o;
-
-;iS;;;	[ ;@
-;[" /* Button border styles. */o;
-
-;iU;;;	[ ;@
-;["ä/* $button-border-width: 1px;
- * $button-border-style: solid;
- * $button-border-color: darken($primary-color, $button-function-factor); */o;
-
-;iY;;;	[ ;@
-;["+/* Radius used throughout the core. */o;
-
-;i[;;;	[ ;@
-;["*/* $button-radius: $global-radius; */o;
-
-;i];;;	[ ;@
-;["(/* Opacity for disabled buttons. */o;
-
-;i_;;;	[ ;@
-;[")/* $button-disabled-opacity: 0.6; */o;
-
-;ia;;;	[ ;@
-;["*/*
- * Dropdown Button Variables
- * */o;
-
-;ie;;;	[ ;@
-;["//* Color of the pip in dropdown buttons */o;
-
-;ig;;;	[ ;@
-;["U/* $dropdown-button-pip-color: #fff;
- * $dropdown-button-pip-color-alt: #333; */o;
-
-;ij;;;	[ ;@
-;[" /* Tiny dropdown buttons */o;
-
-;il;;;	[ ;@
-;["ÿ/* $dropdown-button-padding-tny: $button-tny * 5;
- * $dropdown-button-pip-size-tny: $button-tny;
- * $dropdown-button-pip-right-tny: $button-tny * 2;
- * $dropdown-button-pip-top-tny: -$button-tny / 2 + emCalc(1px); */o;
-
-;iq;;;	[ ;@
-;["!/* Small dropdown buttons */o;
-
-;is;;;	[ ;@
-;["ÿ/* $dropdown-button-padding-sml: $button-sml * 5;
- * $dropdown-button-pip-size-sml: $button-sml;
- * $dropdown-button-pip-right-sml: $button-sml * 2;
- * $dropdown-button-pip-top-sml: -$button-sml / 2 + emCalc(1px); */o;
-
-;ix;;;	[ ;@
-;[""/* Medium dropdown buttons */o;
-
-;iz;;;	[ ;@
-;["Ù/* $dropdown-button-padding-med: $button-med * 4 + emCalc(3px);
- * $dropdown-button-pip-size-med: $button-med - emCalc(3px);
- * $dropdown-button-pip-right-med: $button-med * 2;
- * $dropdown-button-pip-top-med: -$button-med / 2 + emCalc(2px); */o;
-
-;i;;;	[ ;@
-;["!/* Large dropdown buttons */o;
-
-;iÅ;;;	[ ;@
-;["Ò/* $dropdown-button-padding-lrg: $button-lrg * 4;
- * $dropdown-button-pip-size-lrg: $button-lrg - emCalc(6px);
- * $dropdown-button-pip-right-lrg: $button-lrg + emCalc(12px);
- * $dropdown-button-pip-top-lrg: -$button-lrg / 2 + emCalc(3px); */o;
-
-;iÜ;;;	[ ;@
-;["'/*
- * Split Button Variables
- * */o;
-
-;iä;;;	[ ;@
-;["*/* Shared styles for Split Buttons */o;
-
-;iå;;;	[ ;@
-;["£/* $split-button-function-factor: 15%;
- * $split-button-pip-color: #fff;
- * $split-button-pip-color-alt: #333;
- * $split-button-active-bg-tint: rgba(0,0,0,0.1); */o;
-
-;ië;;;	[ ;@
-;["/* Tiny split buttons */o;
-
-;iì;;;	[ ;@
-;["Ì/* $split-button-padding-tny: $button-tny * 9;
- * $split-button-span-width-tny: $button-tny * 6.5;
- * $split-button-pip-size-tny: $button-tny;
- * $split-button-pip-top-tny: $button-tny * 2;
- * $split-button-pip-left-tny: emCalc(-5px); */o;
-
-;iô;;;	[ ;@
-;["/* Small split buttons */o;
-
-;iõ;;;	[ ;@
-;["Ì/* $split-button-padding-sml: $button-sml * 7;
- * $split-button-span-width-sml: $button-sml * 5;
- * $split-button-pip-size-sml: $button-sml;
- * $split-button-pip-top-sml: $button-sml * 1.5;
- * $split-button-pip-left-sml: emCalc(-9px); */o;
-
-;i°;;;	[ ;@
-;["/* Medium split buttons */o;
-
-;i£;;;	[ ;@
-;["˝/* $split-button-padding-med: $button-med * 6.4;
- * $split-button-span-width-med: $button-med * 4;
- * $split-button-pip-size-med: $button-med - emCalc(3px);
- * $split-button-pip-top-med: $button-med * 1.5;
- * $split-button-pip-left-med: emCalc(-9px); */o;
-
-;i©;;;	[ ;@
-;["/* Large split buttons */o;
-
-;i´;;;	[ ;@
-;["/* $split-button-padding-lrg: $button-lrg * 6;
- * $split-button-span-width-lrg: $button-lrg * 3.75;
- * $split-button-pip-size-lrg: $button-lrg - emCalc(6px);
- * $split-button-pip-top-lrg: $button-lrg + emCalc(5px);
- * $split-button-pip-left-lrg: emCalc(-9px); */o;
-
-;i±;;;	[ ;@
-;[" /*
- * Alert Variables
- * */o;
-
-;iµ;;;	[ ;@
-;["/* Alert padding. */o;
-
-;i∑;;;	[ ;@
-;["À/* $alert-padding-top: emCalc(11px);
- * $alert-padding-left: $alert-padding-top;
- * $alert-padding-right: $alert-padding-top + emCalc(10px);
- * $alert-padding-bottom: $alert-padding-top + emCalc(1px); */o;
-
-;iº;;;	[ ;@
-;["/* Text style. */o;
-
-;iæ;;;	[ ;@
-;["ó/* $alert-font-weight: bold;
- * $alert-font-size: emCalc(14px);
- * $alert-font-color: #fff;
- * $alert-font-color-alt: darken($secondary-color, 60%); */o;
-
-;i√;;;	[ ;@
-;["/* Close hover effect. */o;
-
-;i≈;;;	[ ;@
-;["'/* $alert-function-factor: 10%; */o;
-
-;i«;;;	[ ;@
-;["/* Border styles. */o;
-
-;i…;;;	[ ;@
-;["≠/* $alert-border-style: solid;
- * $alert-border-width: 1px;
- * $alert-border-color: darken($primary-color, $alert-function-factor);
- * $alert-bottom-margin: emCalc(20px); */o;
-
-;iŒ;;;	[ ;@
-;["/* Close buttons */o;
-
-;i–;;;	[ ;@
-;["◊/* $alert-close-color: #333;
- * $alert-close-position: emCalc(5px);
- * $alert-close-font-size: emCalc(22px);
- * $alert-close-opacity: 0.3;
- * $alert-close-opacity-hover: 0.5;
- * $alert-close-padding: 5px 4px 4px; */o;
-
-;i◊;;;	[ ;@
-;["/* Border radius */o;
-
-;iŸ;;;	[ ;@
-;[")/* $alert-radius: $global-radius; */o;
-
-;i€;;;	[ ;@
-;["%/*
- * Breadcrumb Variables
- * */o;
-
-;iﬂ;;;	[ ;@
-;["9/* Background color for the breadcrumb container. */o;
-
-;i·;;;	[ ;@
-;["4/* $crumb-bg: lighten($secondary-color, 5%); */o;
-
-;i„;;;	[ ;@
-;["*/* Padding around the breadcrumbs. */o;
-
-;iÂ;;;	[ ;@
-;["f/* $crumb-padding: emCalc(6px) emCalc(14px) emCalc(9px);
- * $crumb-side-padding: emCalc(12px); */o;
-
-;iË;;;	[ ;@
-;["/* Border styles. */o;
-
-;iÍ;;;	[ ;@
-;["¬/* $crumb-function-factor: 10%;
- * $crumb-border-size: 1px;
- * $crumb-border-style: solid;
- * $crumb-border-color: darken($crumb-bg, $crumb-function-factor);
- * $crumb-radius: $global-radius; */o;
-
-;i;;;	[ ;@
-;["//* Various text styles for breadcrumbs. */o;
-
-;iÚ;;;	[ ;@
-;["›/* $crumb-font-size: emCalc(11px);
- * $crumb-font-color: $primary-color;
- * $crumb-font-color-current: #333;
- * $crumb-font-color-unavailable: #999;
- * $crumb-font-transform: uppercase;
- * $crumb-link-decor: underline; */o;
-
-;i˘;;;	[ ;@
-;["$/* Slash between breadcrumbs */o;
-
-;i˚;;;	[ ;@
-;[":/* $crumb-slash-color: #aaa;
- * $crumb-slash: "/"; */o;
-
-;i˛;;;	[ ;@
-;["#/*
- * Clearing Variables
- * */o;
-
-;i;;;	[ ;@
-;["3/* Background colors for parts of Clearing. */o;
-
-;i;;;	[ ;@
-;["É/* $clearing-bg: #111;
- * $clearing-caption-bg: $clearing-bg;
- * $clearing-carousel-bg: #111;
- * $clearing-img-bg: $clearing-bg; */o;
-
-;i	;;;	[ ;@
-;["/* Close button */o;
-
-;i;;;	[ ;@
-;["F/* $clearing-close-color: #fff;
- * $clearing-close-size: 40px; */o;
-
-;i;;;	[ ;@
-;["/* Style the arrows */o;
-
-;i;;;	[ ;@
-;["W/* $clearing-arrow-size: 16px;
- * $clearing-arrow-color: $clearing-close-color; */o;
-
-;i;;;	[ ;@
-;["/* Style captions */o;
-
-;i;;;	[ ;@
-;["W/* $clearing-caption-font-color: #fff;
- * $clearing-caption-padding: 10px 30px; */o;
-
-;i;;;	[ ;@
-;["7/* Make the image and carousel height and style */o;
-
-;i;;;	[ ;@
-;["Ω/* $clearing-active-img-height: 75%;
- * $clearing-carousel-height: 150px;
- * $clearing-carousel-thumb-width: 175px;
- * $clearing-carousel-thumb-active-border: 4px solid rgb(255,255,255); */o;
-
-;i;;;	[ ;@
-;["&/*
- * Custom Form Variables
- * */o;
-
-;i#;;;	[ ;@
-;[")/* Basic form styles input styles */o;
-
-;i%;;;	[ ;@
-;["3/* $custom-form-border-color: #ccc;
- * $custom-form-border-size: 1px;
- * $custom-form-bg: #fff;
- * $custom-form-bg-disabled: #ddd;
- * $custom-form-input-size: 16px;
- * $custom-form-check-color: #222;
- * $custom-form-check-size: 14px;
- * $custom-form-radio-size: 8px;
- * $custom-form-checkbox-radius: 0px; */o;
-
-;i/;;;	[ ;@
-;["&/* Custom select form element. */o;
-
-;i1;;;	[ ;@
-;["ä/* $custom-select-bg: #fff;
- * $custom-select-fade-to-color: #f3f3f3;
- * $custom-select-border-color: #ddd;
- * $custom-select-triangle-color: #aaa;
- * $custom-select-triangle-color-open: #222;
- * $custom-select-height: emCalc(13px) + ($form-spacing * 1.5);
- * $custom-select-margin-bottom: emCalc(20px);
- * $custom-select-font-color-selected: #141414;
- * $custom-select-disabled-color: #888; */o;
-
-;i;;;;	[ ;@
-;["*/* Custom select dropdown element. */o;
-
-;i=;;;	[ ;@
-;["ü/* $custom-dropdown-height: 200px;
- * $custom-dropdown-bg: #fff;
- * $custom-dropdown-border-color: darken(#fff, 20%);
- * $custom-dropdown-border-width: 1px;
- * $custom-dropdown-border-style: solid;
- * $custom-dropdown-font-color: #555;
- * $custom-dropdown-font-size: emCalc(14px);
- * $custom-dropdown-color-selected: #eeeeee;
- * $custom-dropdown-font-color-selected: #000;
- * $custom-dropdown-shadow: 0 2px 2px 0px rgba(0,0,0,0.1);
- * $custom-dropdown-offset-top: none;
- * $custom-dropdown-list-padding: emCalc(4px);
- * $custom-dropdown-left-padding: emCalc(6px);
- * $custom-dropdown-right-padding: emCalc(38px);
- * $custom-dropdown-list-item-min-height: emCalc(24px); */o;
-
-;iM;;;	[ ;@
-;["#/*
- * Dropdown Variables
- * */o;
-
-;iQ;;;	[ ;@
-;["#/* Height and width styles. */o;
-
-;iS;;;	[ ;@
-;["Å/* $f-dropdown-max-width: 200px;
- * $f-dropdown-height: auto;
- * $f-dropdown-max-height: none;
- * $f-dropdown-margin-top: 2px; */o;
-
-;iX;;;	[ ;@
-;["/* Background color */o;
-
-;iZ;;;	[ ;@
-;[" /* $f-dropdown-bg: #fff; */o;
-
-;i\;;;	[ ;@
-;["'/* Border styles for dropdowns. */o;
-
-;i^;;;	[ ;@
-;["}/* $f-dropdown-border-style: solid;
- * $f-dropdown-border-width: 1px;
- * $f-dropdown-border-color: darken(#fff, 20%); */o;
-
-;ib;;;	[ ;@
-;["/* Triangle pip. */o;
-
-;id;;;	[ ;@
-;["z/* $f-dropdown-triangle-size: 6px;
- * $f-dropdown-triangle-color: #fff;
- * $f-dropdown-triangle-side-offset: 10px; */o;
-
-;ih;;;	[ ;@
-;["/* List elements. */o;
-
-;ij;;;	[ ;@
-;["/* $f-dropdown-list-style: none;
- * $f-dropdown-font-color: #555;
- * $f-dropdown-font-size: emCalc(14px);
- * $f-dropdown-list-padding: emCalc(5px) emCalc(10px);
- * $f-dropdown-line-height: emCalc(18px);
- * $f-dropdown-list-hover-bg: #eeeeee;
- * $dropdown-mobile-left: 0; */o;
-
-;ir;;;	[ ;@
-;["0/* When the dropdown has custom content. */o;
-
-;it;;;	[ ;@
-;["5/* $f-dropdown-content-padding: emCalc(20px); */o;
-
-;iv;;;	[ ;@
-;["%/*
- * Flex Video Variables
- * */o;
-
-;iz;;;	[ ;@
-;["./* Video container padding and margins */o;
-
-;i|;;;	[ ;@
-;["~/* $flex-video-padding-top: emCalc(25px);
- * $flex-video-padding-bottom: 67.5%;
- * $flex-video-margin-bottom: emCalc(16px); */o;
-
-;iÄ;;;	[ ;@
-;["$/* Widescreen bottom padding */o;
-
-;iÇ;;;	[ ;@
-;["9/* $flex-video-widescreen-padding-bottom: 57.25%; */o;
-
-;iÑ;;;	[ ;@
-;["&/*
- * Inline List Variables
- * */o;
-
-;ià;;;	[ ;@
-;["2/* Margins and padding of the inline list. */o;
-
-;iä;;;	[ ;@
-;["|/* $inline-list-margin-bottom: emCalc(17px) emCalc(-22px );
- * $inline-list-margin: 0 0;
- * $inline-list-padding: 0; */o;
-
-;ié;;;	[ ;@
-;["'/* Overflow of the inline list. */o;
-
-;iê;;;	[ ;@
-;[")/* $inline-list-overflow: hidden; */o;
-
-;ií;;;	[ ;@
-;["/* List items */o;
-
-;iî;;;	[ ;@
-;["'/* $inline-list-display: block; */o;
-
-;iñ;;;	[ ;@
-;["$/* Elments within list items */o;
-
-;iò;;;	[ ;@
-;["0/* $inline-list-children-display: block; */o;
-
-;iö;;;	[ ;@
-;[""/*
- * Joyride Variables
- * */o;
-
-;iû;;;	[ ;@
-;["/* Joyride styles */o;
-
-;i†;;;	[ ;@
-;["ı/* $joyride-tip-bg: rgb(0,0,0);
- * $joyride-tip-default-width: 300px;
- * $joyride-tip-padding: emCalc(18px) emCalc(20px) emCalc(24px);
- * $joyride-tip-border: solid 1px #555;
- * $joyride-tip-radius: 4px;
- * $joyride-tip-position-offset: 22px; */o;
-
-;iß;;;	[ ;@
-;["/* Tip font styles */o;
-
-;i©;;;	[ ;@
-;["w/* $joyride-tip-font-color: #fff;
- * $joyride-tip-font-size: emCalc(14px);
- * $joyride-tip-header-weight: bold; */o;
-
-;i≠;;;	[ ;@
-;["/* Changes the nub size */o;
-
-;iØ;;;	[ ;@
-;["'/* $joyride-tip-nub-size: 14px; */o;
-
-;i±;;;	[ ;@
-;["</* Adjusts the styles for the timer when its enabled */o;
-
-;i≥;;;	[ ;@
-;["p/* $joyride-tip-timer-width: 50px;
- * $joyride-tip-timer-height: 3px;
- * $joyride-tip-timer-color: #666; */o;
-
-;i∑;;;	[ ;@
-;["5/* Changes up the styles for the close button */o;
-
-;iπ;;;	[ ;@
-;["r/* $joyride-tip-close-color: #777;
- * $joyride-tip-close-size: 30px;
- * $joyride-tip-close-weight: normal; */o;
-
-;iΩ;;;	[ ;@
-;["?/* When Joyride is filling the screen, style for the bg */o;
-
-;iø;;;	[ ;@
-;["0/* $joyride-screenfill: rgba(0,0,0,0.5); */o;
-
-;i¡;;;	[ ;@
-;["$/*
- * Keystroke Variables
- * */o;
-
-;i≈;;;	[ ;@
-;["/* Text styles. */o;
-
-;i«;;;	[ ;@
-;["œ/* $keystroke-font: "Consolas", "Menlo", "Courier", monospace;
- * $keystroke-font-size: emCalc(15px);
- * $keystroke-font-color: #222;
- * $keystroke-font-color-alt: #fff;
- * $keystroke-function-factor: 7%; */o;
-
-;iÕ;;;	[ ;@
-;["/* Keystroke padding. */o;
-
-;iœ;;;	[ ;@
-;["C/* $keystroke-padding: emCalc(2px) emCalc(4px) emCalc(0px); */o;
-
-;i—;;;	[ ;@
-;["(/* Background and border styles. */o;
-
-;i”;;;	[ ;@
-;["˜/* $keystroke-bg: darken(#fff, $keystroke-function-factor);
- * $keystroke-border-style: solid;
- * $keystroke-border-width: 1px;
- * $keystroke-border-color: darken($keystroke-bg, $keystroke-function-factor);
- * $keystroke-radius: $global-radius; */o;
-
-;iŸ;;;	[ ;@
-;[" /*
- * Label Variables
- * */o;
-
-;i›;;;	[ ;@
-;["/* Style the labels */o;
-
-;iﬂ;;;	[ ;@
-;["b/* $label-padding: emCalc(3px) emCalc(10px) emCalc(4px);
- * $label-radius: $global-radius; */o;
-
-;i‚;;;	[ ;@
-;["//* We use these to style the label text */o;
-
-;i‰;;;	[ ;@
-;["Ä/* $label-font-sizing: emCalc(14px);
- * $label-font-weight: bold;
- * $label-font-color: #333;
- * $label-font-color-alt: #fff; */o;
-
-;iÈ;;;	[ ;@
-;["#/*
- * Magellan Variables
- * */o;
-
-;iÌ;;;	[ ;@
-;["/* Basic visual styles */o;
-
-;iÔ;;;	[ ;@
-;[":/* $magellan-bg: #fff;
- * $magellan-padding: 10px; */o;
-
-;iÚ;;;	[ ;@
-;["/*
- * Orbit Settings
- * */o;
-
-;iˆ;;;	[ ;@
-;["/* Caption styles */o;
-
-;i¯;;;	[ ;@
-;["î/* $orbit-container-bg: #f5f5f5;
- * $orbit-caption-bg-old: rgb(0,0,0);
- * $orbit-caption-bg: rgba(0,0,0,0.6);
- * $orbit-caption-font-color: #fff; */o;
-
-;i˝;;;	[ ;@
-;[" /* Left/right nav styles */o;
-
-;iˇ;;;	[ ;@
-;["L/* $orbit-nav-bg-old: rgb(0,0,0);
- * $orbit-nav-bg: rgba(0,0,0,0.6); */o;
-
-;i;;;	[ ;@
-;["/* Timer styles */o;
-
-;i;;;	[ ;@
-;["P/* $orbit-timer-bg-old: rgb(0,0,0);
- * $orbit-timer-bg: rgba(0,0,0,0.6); */o;
-
-;i;;;	[ ;@
-;["/* Bullet nav styles */o;
-
-;i	;;;	[ ;@
-;["R/* $orbit-bullet-nav-color: #999;
- * $orbit-bullet-nav-color-active: #222; */o;
-
-;i;;;	[ ;@
-;["/* Slide numbers */o;
-
-;i;;;	[ ;@
-;["Ç/* $orbit-slide-number-bg: rgba(0,0,0,0);
- * $orbit-slide-number-font-color: #fff;
- * $orbit-slide-number-padding: emCalc(5px); */o;
-
-;i;;;	[ ;@
-;["</* Margin for when Orbit is stacked on small screens */o;
-
-;i;;;	[ ;@
-;["Q/* $stack-on-small-margin-bottom: emCalc(20px); // Doesn't quite work yet */o;
-
-;i;;;	[ ;@
-;["%/*
- * Pagination Variables
- * */o;
-
-;i;;;	[ ;@
-;["/* Pagination container */o;
-
-;i;;;	[ ;@
-;["Q/* $pagination-height: emCalc(24px);
- * $pagination-margin: emCalc(-5px); */o;
-
-;i;;;	[ ;@
-;["/* List-item properties */o;
-
-;i!;;;	[ ;@
-;["…/* $pagination-li-float: $default-float;
- * $pagination-li-height: emCalc(24px);
- * $pagination-li-font-color: #222;
- * $pagination-li-font-size: emCalc(14px);
- * $pagination-li-margin: emCalc(5px); */o;
-
-;i';;;	[ ;@
-;[""/* Pagination anchor links */o;
-
-;i);;;	[ ;@
-;["ò/* $pagination-link-pad: emCalc(1px) emCalc(7px) emCalc(1px);
- * $pagination-link-font-color: #999;
- * $pagination-link-active-bg: darken(#fff, 10%); */o;
-
-;i-;;;	[ ;@
-;[" /* Disabled anchor links */o;
-
-;i/;;;	[ ;@
-;["´/* $pagination-link-unavailable-cursor: $cursor-default-value;
- * $pagination-link-unavailable-font-color: #999;
- * $pagination-link-unavailable-bg-active: transparent; */o;
-
-;i3;;;	[ ;@
-;["*/* Currently selected anchor links */o;
-
-;i5;;;	[ ;@
-;["	/* $pagination-link-current-background: $primary-color;
- * $pagination-link-current-font-color: #fff;
- * $pagination-link-current-font-weight: bold;
- * $pagination-link-current-cursor: $cursor-default-value;
- * $pagination-link-current-active-bg: $primary-color; */o;
-
-;i;;;;	[ ;@
-;[" /*
- * Panel Variables
- * */o;
-
-;i?;;;	[ ;@
-;["'/* Background and border styles */o;
-
-;iA;;;	[ ;@
-;["b/* $panel-bg: darken(#fff, 5%);
- * $panel-border-style: solid;
- * $panel-border-size: 1px; */o;
-
-;iE;;;	[ ;@
-;["5/* Control how much we darken things on hover */o;
-
-;iG;;;	[ ;@
-;["j/* $panel-function-factor: 10%;
- * $panel-border-color: darken($panel-bg, $panel-function-factor); */o;
-
-;iJ;;;	[ ;@
-;["*/* Inner padding and bottom margin */o;
-
-;iL;;;	[ ;@
-;["O/* $panel-margin-bottom: emCalc(20px);
- * $panel-padding: emCalc(20px); */o;
-
-;iO;;;	[ ;@
-;["/* Font colors */o;
-
-;iQ;;;	[ ;@
-;["C/* $panel-font-color: #333;
- * $panel-font-color-alt: #fff; */o;
-
-;iT;;;	[ ;@
-;["(/*
- * Pricing Table Variables
- * */o;
-
-;iX;;;	[ ;@
-;["/* Border color */o;
-
-;iZ;;;	[ ;@
-;["//* $price-table-border: solid 1px #ddd; */o;
-
-;i\;;;	[ ;@
-;["-/* Bottom margin of the pricing table */o;
-
-;i^;;;	[ ;@
-;["4/* $price-table-margin-bottom: emCalc(20px); */o;
-
-;i`;;;	[ ;@
-;["#/* Control the title styles */o;
-
-;ib;;;	[ ;@
-;["Œ/* $price-title-bg: #ddd;
- * $price-title-padding: emCalc(15px) emCalc(20px);
- * $price-title-align: center;
- * $price-title-color: #333;
- * $price-title-weight: bold;
- * $price-title-size: emCalc(16px); */o;
-
-;ii;;;	[ ;@
-;["#/* Control the price styles */o;
-
-;ik;;;	[ ;@
-;["–/* $price-money-bg: #eee;
- * $price-money-padding: emCalc(15px) emCalc(20px);
- * $price-money-align: center;
- * $price-money-color: #333;
- * $price-money-weight: normal;
- * $price-money-size: emCalc(20px); */o;
-
-;ir;;;	[ ;@
-;["/* Description styles */o;
-
-;it;;;	[ ;@
-;["/* $price-bg: #fff;
- * $price-desc-color: #777;
- * $price-desc-padding: emCalc(15px);
- * $price-desc-align: center;
- * $price-desc-font-size: emCalc(12px);
- * $price-desc-weight: normal;
- * $price-desc-line-height: 1.4;
- * $price-desc-bottom-border: dotted 1px #ddd; */o;
-
-;i};;;	[ ;@
-;["/* List item styles */o;
-
-;i;;;	[ ;@
-;["ÿ/* $price-item-color: #333;
- * $price-item-padding: emCalc(15px);
- * $price-item-align: center;
- * $price-item-font-size: emCalc(14px);
- * $price-item-weight: normal;
- * $price-item-bottom-border: dotted 1px #ddd; */o;
-
-;iÜ;;;	[ ;@
-;["/* CTA area styles */o;
-
-;ià;;;	[ ;@
-;["s/* $price-cta-bg: #f5f5f5;
- * $price-cta-align: center;
- * $price-cta-padding: emCalc(20px) emCalc(20px) 0; */o;
-
-;iå;;;	[ ;@
-;["'/*
- * Progress Bar Variables
- * */o;
-
-;iê;;;	[ ;@
-;["/* Progress bar height */o;
-
-;ií;;;	[ ;@
-;["S/* $progress-bar-height: emCalc(25px);
- * $progress-bar-color: transparent; */o;
-
-;iï;;;	[ ;@
-;["/* Border styles */o;
-
-;ió;;;	[ ;@
-;["≠/* $progress-bar-border-color: darken(#fff, 20%);
- * $progress-bar-border-size: 1px;
- * $progress-bar-border-style: solid;
- * $progress-bar-border-radius: $global-radius; */o;
-
-;iú;;;	[ ;@
-;["/* Margin & padding */o;
-
-;iû;;;	[ ;@
-;["X/* $progress-bar-pad: emCalc(2px);
- * $progress-bar-margin-bottom: emCalc(10px); */o;
-
-;i°;;;	[ ;@
-;["/* Meter colors */o;
-
-;i£;;;	[ ;@
-;["¬/* $progress-meter-color: $primary-color;
- * $progress-meter-secondary-color: $secondary-color;
- * $progress-meter-success-color: $success-color;
- * $progress-meter-alert-color: $alert-color; */o;
-
-;i®;;;	[ ;@
-;["!/*
- * Reveal Variables
- * */o;
-
-;i¨;;;	[ ;@
-;["/* Reveal overlay. */o;
-
-;iÆ;;;	[ ;@
-;["P/* $reveal-overlay-bg: rgba(#000, .45);
- * $reveal-overlay-bg-old: #000; */o;
-
-;i±;;;	[ ;@
-;["/* Modal itself. */o;
-
-;i≥;;;	[ ;@
-;["≤/* $reveal-modal-bg: #fff;
- * $reveal-position-top: 50px;
- * $reveal-default-width: 80%;
- * $reveal-modal-padding: emCalc(20px);
- * $reveal-box-shadow: 0 0 10px rgba(#000,.4); */o;
-
-;iπ;;;	[ ;@
-;["/* Reveal close button */o;
-
-;iª;;;	[ ;@
-;["±/* $reveal-close-font-size: emCalc(22px);
- * $reveal-close-top: emCalc(8px);
- * $reveal-close-side: emCalc(11px);
- * $reveal-close-color: #aaa;
- * $reveal-close-weight: bold; */o;
-
-;i¡;;;	[ ;@
-;["/* Modal border */o;
-
-;i√;;;	[ ;@
-;["d/* $reveal-border-style: solid;
- * $reveal-border-width: 1px;
- * $reveal-border-color: #666; */o;
-
-;i«;;;	[ ;@
-;[""/*
- * Section Variables
- * */o;
-
-;iÀ;;;	[ ;@
-;["#/* Padding and hover factor */o;
-
-;iÕ;;;	[ ;@
-;["L/* $section-padding: emCalc(15px);
- * $section-function-factor: 10%; */o;
-
-;i–;;;	[ ;@
-;["/* Titles */o;
-
-;i“;;;	[ ;@
-;["∫/* $section-title-color: #333;
- * $section-title-bg: #efefef;
- * $section-title-bg-active: darken($section-title-bg, $section-function-factor);
- * $section-title-bg-active-tabs: #fff; */o;
-
-;i◊;;;	[ ;@
-;["/* Border size */o;
-
-;iŸ;;;	[ ;@
-;["f/* $section-border-size: 1px;
- * $section-border-style: solid;
- * $section-border-color: #ccc; */o;
-
-;i›;;;	[ ;@
-;["8/* Color of the background and some size options */o;
-
-;iﬂ;;;	[ ;@
-;["≤/* $section-content-bg: #fff;
- * $section-vertical-nav-min-width: emCalc(200px);
- * $section-vertical-tabs-title-width: emCalc(200px);
- * $section-bottom-margin: emCalc(20px); */o;
-
-;i‰;;;	[ ;@
-;["#/*
- * Side Nav Variables
- * */o;
-
-;iË;;;	[ ;@
-;["/* Padding */o;
-
-;iÍ;;;	[ ;@
-;["-/* $side-nav-padding: emCalc(14px) 0; */o;
-
-;iÏ;;;	[ ;@
-;["/* List styles */o;
-
-;iÓ;;;	[ ;@
-;["v/* $side-nav-list-type: none;
- * $side-nav-list-position: inside;
- * $side-nav-list-margin: 0 0 emCalc(7px) 0; */o;
-
-;iÚ;;;	[ ;@
-;["/* Link styles */o;
-
-;iÙ;;;	[ ;@
-;["•/* $side-nav-link-color: $primary-color;
- * $side-nav-link-color-active: lighten(#000, 30%);
- * $side-nav-font-size: emCalc(14px);
- * $side-nav-font-weight: bold; */o;
-
-;i˘;;;	[ ;@
-;["/* Border styles */o;
-
-;i˚;;;	[ ;@
-;["y/* $side-nav-divider-size: 1px;
- * $side-nav-divider-style: solid;
- * $side-nav-divider-color: darken(#fff, 10%); */o;
-
-;iˇ;;;	[ ;@
-;[""/*
- * Sub Nav Variables
- * */o;
-
-;i;;;	[ ;@
-;["/* Margin and padding */o;
-
-;i;;;	[ ;@
-;["h/* $sub-nav-list-margin: emCalc(-4px) 0 emCalc(18px);
- * $sub-nav-list-padding-top: emCalc(4px); */o;
-
-;i;;;	[ ;@
-;["/* Definition */o;
-
-;i
-;;;	[ ;@
-;["¨/* $sub-nav-font-size: emCalc(14px);
- * $sub-nav-font-color: #999;
- * $sub-nav-font-weight: normal;
- * $sub-nav-text-decoration: none;
- * $sub-nav-border-radius: 1000px; */o;
-
-;i;;;	[ ;@
-;["/* Active item styles */o;
-
-;i;;;	[ ;@
-;["÷/* $sub-nav-active-font-weight: bold;
- * $sub-nav-active-bg: $primary-color;
- * $sub-nav-active-color: #fff;
- * $sub-nav-active-padding: emCalc(3px) emCalc(9px);
- * $sub-nav-active-cursor: $cursor-default-value; */o;
-
-;i;;;	[ ;@
-;["!/*
- * Switch Variables
- * */o;
-
-;i;;;	[ ;@
-;["G/* Border styles and background colors for the switch container */o;
-
-;i;;;	[ ;@
-;["Å/* $switch-border-color: darken(#fff, 20%);
- * $switch-border-style: solid;
- * $switch-border-width: 1px;
- * $switch-bg: #fff; */o;
-
-;i#;;;	[ ;@
-;["1/* Switch heights for our default classes */o;
-
-;i%;;;	[ ;@
-;["û/* $switch-height-tny: 22px;
- * $switch-height-sml: 28px;
- * $switch-height-med: 36px;
- * $switch-height-lrg: 44px;
- * $switch-bottom-margin: emCalc(20px); */o;
-
-;i+;;;	[ ;@
-;["&/* Font sizes for our classes. */o;
-
-;i-;;;	[ ;@
-;["¶/* $switch-font-size-tny: 11px;
- * $switch-font-size-sml: 12px;
- * $switch-font-size-med: 14px;
- * $switch-font-size-lrg: 17px;
- * $switch-label-side-padding: 6px; */o;
-
-;i3;;;	[ ;@
-;["/* Switch-paddle */o;
-
-;i5;;;	[ ;@
-;["û/* $switch-paddle-bg: #fff;
- * $switch-paddle-fade-to-color: darken($switch-paddle-bg, 10%);
- * $switch-paddle-border-color: darken($switch-paddle-bg, 35%);
- * $switch-paddle-border-width: 1px;
- * $switch-paddle-border-style: solid;
- * $switch-paddle-transition-speed: .1s;
- * $switch-paddle-transition-ease: ease-out;
- * $switch-positive-color: lighten($success-color, 50%);
- * $switch-negative-color: #f5f5f5; */o;
-
-;i?;;;	[ ;@
-;["5/* Outline Style for tabbing through switches */o;
-
-;iA;;;	[ ;@
-;["2/* $switch-label-outline: 1px dotted #888; */o;
-
-;iC;;;	[ ;@
-;[" /*
- * Table Variables
- * */o;
-
-;iG;;;	[ ;@
-;["7/* Background color for the table and even rows */o;
-
-;iI;;;	[ ;@
-;[";/* $table-bg: #fff;
- * $table-even-row-bg: #f9f9f9; */o;
-
-;iL;;;	[ ;@
-;[""/* Table cell border style */o;
-
-;iN;;;	[ ;@
-;["`/* $table-border-style: solid;
- * $table-border-size: 1px;
- * $table-border-color: #ddd; */o;
-
-;iR;;;	[ ;@
-;["/* Table head styles */o;
-
-;iT;;;	[ ;@
-;["»/* $table-head-bg: #f5f5f5;
- * $table-head-font-size: emCalc(14px);
- * $table-head-font-color: #222;
- * $table-head-font-weight: bold;
- * $table-head-padding: emCalc(8px) emCalc(10px) emCalc(10px); */o;
-
-;iZ;;;	[ ;@
-;["&/* Row padding and font styles */o;
-
-;i\;;;	[ ;@
-;["ü/* $table-row-padding: emCalc(9px) emCalc(10px);
- * $table-row-font-size: emCalc(14px);
- * $table-row-font-color: #222;
- * $table-line-height: emCalc(18px); */o;
-
-;ia;;;	[ ;@
-;["'/* Display and margin of tables */o;
-
-;ic;;;	[ ;@
-;["M/* $table-display: table-cell;
- * $table-margin-bottom: emCalc(20px); */o;
-
-;if;;;	[ ;@
-;["*/*
- * Image Thumbnail Variables
- * */o;
-
-;ij;;;	[ ;@
-;["/* Border styles */o;
-
-;il;;;	[ ;@
-;["Õ/* $thumb-border-style: solid;
- * $thumb-border-width: 4px;
- * $thumb-border-color: #fff;
- * $thumb-box-shadow: 0 0 0 1px rgba(#000,.2);
- * $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5); */o;
-
-;ir;;;	[ ;@
-;["1/* Radius and transition speed for thumbs */o;
-
-;it;;;	[ ;@
-;["L/* $thumb-radius: $global-radius;
- * $thumb-transition-speed: 200ms; */o;
-
-;iw;;;	[ ;@
-;[""/*
- * Tooltip Variables
- * */o;
-
-;i{;;;	[ ;@
-;["/* $has-tip-border-bottom: dotted 1px #ccc;
- * $has-tip-font-weight: bold;
- * $has-tip-font-color: #333;
- * $has-tip-border-bottom-hover: dotted 1px darken($primary-color, 20%);
- * $has-tip-font-color-hover: $primary-color;
- * $has-tip-cursor-type: help; */o;
-
-;iÇ;;;	[ ;@
-;["ò/* $tooltip-padding: emCalc(8px);
- * $tooltip-bg: #000;
- * $tooltip-font-size: emCalc(15px);
- * $tooltip-font-weight: bold;
- * $tooltip-font-color: #fff;
- * $tooltip-line-height: 1.3;
- * $tooltip-close-font-size: emCalc(10px);
- * $tooltip-close-font-weight: normal;
- * $tooltip-close-font-color: #888;
- * $tooltip-font-size-sml: emCalc(14px);
- * $tooltip-radius: $global-radius;
- * $tooltip-pip-size: 5px; */o;
-
-;iè;;;	[ ;@
-;[""/*
- * Top Bar Variables
- * */o;
-
-;iì;;;	[ ;@
-;["+/* Background color for the top bar */o;;iï;"topbar-bg;	[ ;0;@
-;o;$	;iï;%{	;&i≤;'i;(i	;)i	;@
-;0o;
-
-;ió;;;	[ ;@
-;["/* Height and margin */o;
-
-;iô;;;	[ ;@
-;["o/* $topbar-height:                        45px;
- * $topbar-margin-bottom:                 emCalc(30px); */o;
-
-;iú;;;	[ ;@
-;["+/* Control Input height for top bar */o;
-
-;iû;;;	[ ;@
-;["9/* $topbar-input-height:                  2.45em; */o;
-
-;i†;;;	[ ;@
-;[">/* Controlling the styles for the title in the top bar */o;
-
-;i¢;;;	[ ;@
-;["o/* $topbar-title-weight:                  bold;
- * $topbar-title-font-size:               emCalc(17px); */o;
-
-;i•;;;	[ ;@
-;["./* Style the top bar dropdown elements */o;
-
-;iß;;;	[ ;@
-;["3/* $topbar-dropdown-bg:                   #222;
- * $topbar-dropdown-link-color:           #fff;
- * $topbar-dropdown-link-bg:              lighten($topbar-bg, 5%);
- * $topbar-dropdown-toggle-size:          5px;
- * $topbar-dropdown-toggle-color:         #fff;
- * $topbar-dropdown-toggle-alpha:         0.5; */o;
-
-;iÆ;;;	[ ;@
-;[";/* Set the link colors and styles for top-level nav */o;
-
-;i∞;;;	[ ;@
-;["ø/* $topbar-link-color:                    #fff;
- * $topbar-link-color-hover:              #fff;
- * $topbar-link-color-active:             #fff;
- * $topbar-link-weight:                   bold;
- * $topbar-link-font-size:                emCalc(13px);
- * $topbar-link-hover-lightness:          -30%; // Darken by 30%
- * $topbar-link-bg-hover:                 darken($topbar-bg, 3%);
- * $topbar-link-bg-active:                darken($topbar-bg, 3%); */o;
-
-;iπ;;;	[ ;@
-;["œ/* $topbar-dropdown-label-color:          #555;
- * $topbar-dropdown-label-text-transform: uppercase;
- * $topbar-dropdown-label-font-weight:    bold;
- * $topbar-dropdown-label-font-size:      emCalc(10px); */o;
-
-;iæ;;;	[ ;@
-;["/* Top menu icon styles */o;
-
-;i¿;;;	[ ;@
-;["_/* $topbar-menu-link-transform:           uppercase;
- * $topbar-menu-link-font-size:           emCalc(13px);
- * $topbar-menu-link-weight:              bold;
- * $topbar-menu-link-color:               #fff;
- * $topbar-menu-icon-color:               #fff;
- * $topbar-menu-link-color-toggled:       #888;
- * $topbar-menu-icon-color-toggled:       #888; */o;
-
-;i»;;;	[ ;@
-;[",/* Transitions and breakpoint styles */o;
-
-;i ;;;	[ ;@
-;["˙/* $topbar-transition-speed:              300ms;
- * $topbar-breakpoint:                    emCalc(940px); // Change to 9999px for always mobile layout
- * $topbar-media-query:                   "only screen and (min-width:"#{$topbar-breakpoint}")"; */o;
-
-;iŒ;;;	[ ;@
-;["/* Divider Styles */o;
-
-;i–;;;	[ ;@
-;["ù/* $topbar-divider-border-bottom:         solid 1px lighten($topbar-bg, 10%);
- * $topbar-divider-border-top:            solid 1px darken($topbar-bg, 10%); */o;
-
-;i”;;;	[ ;@
-;["/* Sticky Class */o;
-
-;i’;;;	[ ;@
-;["</* $topbar-sticky-class:                  ".sticky"; */;@
