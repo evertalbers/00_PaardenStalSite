@@ -2898,8 +2898,11 @@ footer {
   padding-bottom: 1em;
   width: 100% !important;
   display: block;
-  background: #e0dece;
-  font-size: 0.75em; }
+  background: #e0dece; }
+  footer .columns {
+    font-size: 0.75em; }
   footer.row {
     width: 100% !important;
     max-width: 100%; }
+  footer .footermail {
+    text-align: right; }

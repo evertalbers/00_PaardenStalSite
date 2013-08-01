@@ -71,8 +71,14 @@ footer {
 	width:100% !important;
 	display: block;
 	background: $tinted-background-color;
-	font-size: 0.75em;
+
+	.columns {
+		font-size: 0.75em;
+	}
 
 	&.row {width:100% !important;
 		max-width: 100%;}
+	.footermail {
+		text-align: right;
+	}
 }

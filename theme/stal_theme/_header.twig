@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+      {{ app.config.general.sitename }}
+      {% if record.title is not defined and app.config.general.payoff is defined %} | {{ app.config.general.payoff }}{% endif %}</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <!-- If you are using CSS version, add this -->
+  <link rel="stylesheet" href="{{ paths.theme }}css/stal.css" />
+  <link rel="stylesheet" href="{{ paths.theme }}css/app.css" />
+  <script src="{{ paths.theme }}js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+<div class="contain-to-grid sticky">
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#">Home</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class="active"><a href="#">Wie</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Wat</a></li>
+      <li class="divider"></li>
+      <li class=""><a href="#">Waar</a>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="toplogo_container"><img src="{{ paths.theme }}ui_images/paardenstal_logo_1regel_wit.svg" alt="Studio De Paardenstal" id="toplogo"></li>
+    </ul>
+  </section>
+</nav>
+</div>
