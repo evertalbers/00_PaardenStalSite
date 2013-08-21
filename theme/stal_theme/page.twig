@@ -11,23 +11,21 @@
 </ul>
 </nav>
   <article class="large-9 columns">
-    <ul data-orbit>
-  <li>
-    <img src="http://placeimg.com/740/480/arch" alt="">
-    <div class="orbit-caption">Bijschrift 1</div>
-  </li>
-  <!-- <li>
-    <img src="http://placeimg.com/740/480/nature" alt=""/>
-    <div class="orbit-caption">Bijschrift 2</div>
-  </li>
-  <li>
-    <img src="http://placeimg.com/740/480/tech" alt=""/>
-    <div class="orbit-caption">Bijschrift nummer 3</div>
-  </li> -->
-</ul>
+    {% if page.image!="" %}
+    <img src="{{ page.image|thumbnail(720, 720, "r") }}">
+    {% endif %}
    <!--  <img src="http://placeimg.com/740/480/arch" alt=""> -->
-    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, vero nihil possimus libero obcaecati doloribus dolorem odit dolores corporis iusto!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, ut soluta atque pariatur dolorum quam commodi cupiditate quo ex magnam earum ea tempore labore! Nihil, repellat, eveniet laboriosam a consequatur ipsa numquam obcaecati vel dolorum suscipit cupiditate soluta similique consequuntur corrupti id quas nisi. Blabla similique, iure quod distinctio praesentium iusto fugit tempora culpa sunt eaque nobis neque suscipigfgfitae?</p>
+    <h1>{{ page.title }}</h1>
+    {{ record.body }}
+    {% if page.diashow!=""%}
+    <ul class="clearing-thumbs" data-clearing>
+    {% for image in page.diashow %}
+    <li><a href="{{ image.filename|thumbnail(1200,800) }}"><img data-caption="{{ image.title }}" src="{{ image.filename|thumbnail(120,120) }}"></a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {{ record.body_onder}}
+
   </article>
 </div>
 

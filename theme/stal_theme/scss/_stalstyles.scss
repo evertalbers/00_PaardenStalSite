@@ -1,13 +1,13 @@
 // Hulp tijdens ontwikkeling
 
-.separator { 
+/*.separator { 
 	color: black;
 	border-top: 1px dotted black;
 	margin-top: 1em;
 	&:before {
 		content: "Nieuw paginatype";
 	}
-}
+}*/
 // Einde Hulp tijdens ontwikkeling
 
 #toplogo {
@@ -71,6 +71,8 @@ footer {
 	width:100% !important;
 	display: block;
 	background: $tinted-background-color;
+	position: fixed;
+	bottom: 0;
 
 	.columns {
 		font-size: 0.75em;

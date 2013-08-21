@@ -22,7 +22,7 @@
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
-      <h1><a href="#">Home</a></h1>
+      <h1><a href="/" title="Ga naar de homepage van Studio De Paardenstal">Home</a></h1>
     </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -32,12 +32,7 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li class="divider"></li>
-      <li class="active"><a href="#">Wie</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Wat</a></li>
-      <li class="divider"></li>
-      <li class=""><a href="#">Waar</a>
-      </li>
+      {{ menu('main', '_sub_menu.twig') }}
       <li class="divider"></li>
     </ul>
 

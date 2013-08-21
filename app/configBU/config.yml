@@ -40,8 +40,8 @@ maintenance_template: maintenance_default.twig
 #favicon: images/favicon-bolt.ico
 
 # The default content to use for the homepage, and the template to render it with.
-homepage: homepage/home
-homepage_template: index.twig
+homepage: page/1
+homepage_template: page.twig
 
 # The default content for the 404 page. Uses the 'record_template' template by default.
 # Make sure this is set to an existing record, otherwise visitors will get an error-page

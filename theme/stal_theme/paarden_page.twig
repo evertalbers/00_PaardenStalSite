@@ -1,0 +1,37 @@
+{% include '_header.twig' %}
+
+<div class="row separator">
+
+  <article class="large-12 columns">
+    <h1>{{ page.title }}</h1>
+    {{ record.body }}
+
+{% setcontent paarden = "paarden" where { "paardtypes": 'normal'} %} 
+    {% for paard in paarden %}
+    <section class="large-3 small-6 columns deelnemerblok">
+      <img src="{{ paard.image|thumbnail(400,400, "c") }}" alt="{{ paard.title }}">
+      <h5>{{ paard.title }}</h5>
+      <p>{{ paard.bedrijfsnaam }}</p>
+      <p>{{ paard.activiteiten }}</p>
+    {% if paard.website!="" %}
+      <p class="deelnemerlink"><a href="{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
+      {% endif %}    </section>
+    {% endfor %}
+</article>
+<article class="large-9 columns">
+  {{ record.body_onder}}
+  {% setcontent paarden = "paarden" where { "paardtypes": 'wild'} %} 
+      {% for paard in paarden %}
+    <section class="large-3 small-6 columns deelnemerblok">
+      <img src="{{ paard.image|thumbnail(400,400, "c") }}" alt="{{ paard.title }}">
+      <h5>{{ paard.title }}</h5>
+      <p>{{ paard.bedrijfsnaam }}</p>
+      <p>{{ paard.activiteiten }}</p>
+      {% if paard.website!="" %}
+      <p class="deelnemerlink"><a href="{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
+      {% endif %}
+    </section>
+    {% endfor %}
+  </article>
+</div>
+{% include '_footer.twig' %}

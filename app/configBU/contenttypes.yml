@@ -8,19 +8,20 @@ pages:
         slug:
             type: slug
             uses: title
+        image: 
+            type: image
+        imagelist:
+            type: imagelist
+            label: beeld of meerdere beelden
+        teaser:
+            type: html
+            height: 150px
         body:
             type: html
             height: 300px
-        diashow:
-            type: imagelist
-        body_onder:
-            label: Vervolg bodytekst
-            type: html
-            height: 300px
-            prefix: "Deze tekst komt onder een eventuele reeks foto's"
         template:
             type: templateselect
-            filter: '*page.twig'
+            filter: '*.twig'
     taxonomy: [ chapters ]
     sort: title
     recordsperpage: 100
@@ -48,12 +49,17 @@ projects:
         body:
             type: html
             height: 300px
-    sort: datepublish DESC
-    recordsperpage: 100
+        showonhomeslider:
+            label: Toon op homepage
+            postfix: "De meest recente X projecten worden getoond op de homepage. De titel komt in het bijschrift."
+            type: select
+            values: [ ja, nee ]
+        sort: datepublish DESC
+        recordsperpage: 100
 
 paard:
-    name: paarden
-    singular_name: paard
+    name: Paard
+    singular name: Paarden
     fields:
         title:
             type: text
@@ -73,35 +79,3 @@ paard:
         slug:
             type: slug
             uses: title
-    taxonomy: [ paardtypes ]
-
-homepages:
-    name: homepages
-    singular_name: homepage
-    fields:
-        title:
-            type: text
-            class: large
-        slug:
-            type: slug
-            uses: title
-        image: 
-            type: image
-        imagelist:
-            type: imagelist
-            label: Slider caroussel
-            postfix: "Voorbeeld van een bijschrift met link - gewone HTML -tags gebruiken de ( en de ) :    &#60;a href=  &quot;/page/blabla  &quot;&gt; Bijschrift    &#60;/a&gt;"
-        intro:
-            type: html
-            height: 300px
-            label: introductietekst
-        body:
-            type: html
-            height: 300px
-            label: tekst in tweede tekstkolom
-        template:
-            type: templateselect
-            filter: '*.twig'
-    taxonomy: [ chapters ]
-    sort: title
-    recordsperpage: 100

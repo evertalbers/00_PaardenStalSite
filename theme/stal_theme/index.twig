@@ -1,0 +1,46 @@
+{% include '_header.twig' %}
+
+<div class="fullwidth tinted">
+<div class="row">
+  <div class="small-12 large-8 columns">
+  
+
+<!-- Basic orbit markup -->
+<ul data-orbit>
+
+{% for image in homepage.imagelist %}
+<li>
+	<img src="{{ image.filename|thumbnail(740,480) }}" alt="{{ image.title|striptags }}">
+  <div class="orbit-caption">{{ image.title|raw }}</div>
+{% endfor %}
+</li>
+</ul>
+
+
+  </div>
+  <div class="large-4 columns">{{homepage.intro}}</div>
+  
+</div>
+</div>
+
+<div class="row homebelow">
+<div class="large-6 columns">
+  <h5>Laatste nieuws</h5>
+  <ul>
+    <li class="nieuwsitem">
+      <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
+      <li class="nieuwsitem">
+        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
+       <li class="nieuwsitem">
+        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
+      <li class="nieuwsitem">
+        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
+    </li>
+  </ul>
+</div>
+<div class="large-6 columns">
+{{ homepage.body }}
+</div>
+
+</div>
+{% include '_footer.twig' %}
