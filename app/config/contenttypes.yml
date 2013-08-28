@@ -13,17 +13,52 @@ pages:
             height: 300px
         diashow:
             type: imagelist
+            postfix: "Beelden van ongeveer 1200 pixels breed gebruiken, liever geen bestanden van meer dan 400KB<br>Als een bestand al eerder is geupload kun je hem op de server aanwijzen via Voeg Bestaand Beeld In"
         body_onder:
             label: Vervolg bodytekst
             type: html
             height: 300px
-            prefix: "Deze tekst komt onder een eventuele reeks foto's"
+            prefix: "Deze tekst komt na een eventuele reeks foto's"
+        menuvolgorde:
+            type: integer
+            postfix: "Alleen nummers invullen. Lage nummers komen bovenaan in het menu. <br>TIP: als je 10 en 20 gebruikt, past 15 er later tussen zonder dat je alles hoeft om te nummeren."
         template:
             type: templateselect
             filter: '*page.twig'
     taxonomy: [ chapters ]
     sort: title
     recordsperpage: 100
+
+nieuwsberichten:
+    name: nieuwsberichten
+    singular_name: nieuwsbericht
+    fields:
+        title:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title
+        teaser:
+            type: text
+            class: wide
+            postfix: "Een korte samenvatting van de tekst, deze komt op de nieuws overzicht pagina EN boven het nieuwsbericht"
+        image: 
+            type: image
+        body:
+            type: html
+            height: 300px
+        diashow:
+            type: imagelist
+        body_onder:
+            label: Vervolg bodytekst
+            type: html
+            height: 300px
+            prefix: "Deze tekst komt na een eventuele reeks foto's"
+    template: 'nieuwsbericht.twig'
+    sort: datepublish
+    recordsperpage: 100
+    listing_template: 'entries.twig'
 
 projects:
     name: Projects
@@ -32,24 +67,24 @@ projects:
         title:
             type: text
             class: large
-        madeby:
+        teaser:
             type: text
             class: wide
-            prefix: "Vermeld hier de Paardenstaller(s) achter het project"
+            postfix: "Een korte samenvatting van de tekst, deze komt alleen op de projecten overzicht pagina"
         slug:
             type: slug
             uses: title
-        imagelist:
-            type: imagelist
-            label: beeld of meerdere beelden
-        teaser:
-            type: html
-            height: 150px
+        image:
+            type: image
+            label: beeld
+            postfix: "Beelden van ongeveer 1200 pixels breed gebruiken, liever geen bestanden van meer dan 400KB<br>Als een bestand al eerder is geupload kun je hem op de server aanwijzen via Voeg Bestaand Beeld In"
         body:
             type: html
             height: 300px
+    template: 'project.twig'
     sort: datepublish DESC
     recordsperpage: 100
+    listing_template: 'projects_overview.twig'
 
 paard:
     name: paarden
@@ -60,6 +95,7 @@ paard:
             class: large
         image:
             type: image
+            postfix: "Beelden van ongeveer 1200 pixels breed gebruiken, liever geen bestanden van meer dan 400KB<br>Als een bestand al eerder is geupload kun je hem op de server aanwijzen via Voeg Bestaand Beeld In"
         bedrijfsnaam:
             type: text
             class: large
@@ -69,7 +105,11 @@ paard:
         website:
             type: text
             class: wide
-            prefix: "Bijvoorbeeld http://www.mijnwebsite.nl - dus inclusief http://"
+            prefix: "Bijvoorbeeld www.mijnwebsite.nl - dus zonder http://"
+        paardvolgorde:
+            type: integer
+            postfix: "Alleen nummers invullen. Lage nummers komen bovenaan in het menu. <br>TIP: als je 10 en 20 gebruikt, past 15 er later tussen zonder dat je alles hoeft om te nummeren."
+
         slug:
             type: slug
             uses: title
@@ -85,12 +125,10 @@ homepages:
         slug:
             type: slug
             uses: title
-        image: 
-            type: image
         imagelist:
             type: imagelist
             label: Slider caroussel
-            postfix: "Voorbeeld van een bijschrift met link - gewone HTML -tags gebruiken de ( en de ) :    &#60;a href=  &quot;/page/blabla  &quot;&gt; Bijschrift    &#60;/a&gt;"
+            postfix: "Voorbeeld van een bijschrift met link - gewone HTML-tags gebruiken:    &#60;a href=  &quot;/page/blabla &quot;&gt; Bijschrift &#60;/a&gt; <br>Beelden van ongeveer 1200 pixels breed gebruiken, liever geen bestanden van meer dan 400KB<br>Als een bestand al eerder is geupload kun je hem op de server aanwijzen via Voeg Bestaand Beeld In"
         intro:
             type: html
             height: 300px

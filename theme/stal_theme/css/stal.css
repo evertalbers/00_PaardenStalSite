@@ -2458,6 +2458,26 @@ form.custom {
   form.custom .custom.disabled {
     background: #dddddd; }
 
+/* Image Thumbnails */
+.th {
+  line-height: 0;
+  display: inline-block;
+  border: solid 4px white;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 200ms ease-out;
+  -moz-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
+  .th:hover, .th:focus {
+    -webkit-box-shadow: 0 0 6px 1px rgba(178, 4, 4, 0.5);
+    box-shadow: 0 0 6px 1px rgba(178, 4, 4, 0.5); }
+  .th.radius {
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
+
+a.th {
+  display: inline-block; }
+
 /* Wrapped around .top-bar to contain to grid width */
 .contain-to-grid {
   width: 100%;
@@ -2872,6 +2892,8 @@ form.custom {
           color: white; }
           .orbit-container .orbit-slides-container > * .orbit-caption a:hover {
             text-decoration: underline; }
+          .orbit-container .orbit-slides-container > * .orbit-caption a:after {
+            content: " \00bb"; }
   .orbit-container .orbit-slide-number {
     position: absolute;
     top: 10px;
@@ -3040,25 +3062,49 @@ form.custom {
   .artikel_overzicht_item .image_container {
     padding-left: 0; }
 
+.columns h1 {
+  margin-top: 1em; }
+.columns a:hover {
+  text-decoration: underline; }
+  .columns a:hover img {
+    opacity: 0.6; }
+
 .deelnemerblok {
   border-right: 1px solid #e6e6e6;
-  min-height: 28.125em;
-  margin-bottom: 1em; }
+  min-height: 25em;
+  margin-bottom: 2em;
+  padding-bottom: 2em; }
   .deelnemerblok:last-child {
     border-right: none; }
   .deelnemerblok .deelnemerlink {
     position: absolute;
     bottom: 0em;
     font-weight: 700; }
+  .deelnemerblok svg {
+    width: 100%;
+    height: auto; }
+
+#footerspacer {
+  /*background: red;*/
+  display: block;
+  height: 3.125em; }
 
 footer {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   width: 100% !important;
   display: block;
   background: #e0dece;
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
+  footer:hover {
+    padding-top: 1em;
+    padding-bottom: 1em; }
   footer .columns {
     font-size: 0.75em; }
   footer.row {

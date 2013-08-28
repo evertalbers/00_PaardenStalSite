@@ -7,28 +7,34 @@
     {{ record.body }}
 
 {% setcontent paarden = "paarden" where { "paardtypes": 'normal'} %} 
-    {% for paard in paarden %}
+    {% for paard in paarden|order ('paardvolgorde') %}
     <section class="large-3 small-6 columns deelnemerblok">
-      <img src="{{ paard.image|thumbnail(400,400, "c") }}" alt="{{ paard.title }}">
+      {% if paard.image!="" %}
+      <img src="{{ paard.image|thumbnail(300,300, "c") }}" alt="{{ paard.title }}">
+      {% else %}
+      {% include '_grijsvierkant_svg.twig' %}
+      {% endif %}
       <h5>{{ paard.title }}</h5>
-      <p>{{ paard.bedrijfsnaam }}</p>
       <p>{{ paard.activiteiten }}</p>
     {% if paard.website!="" %}
-      <p class="deelnemerlink"><a href="{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
+      <p class="deelnemerlink"><a href="http://{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
       {% endif %}    </section>
     {% endfor %}
 </article>
-<article class="large-9 columns">
+<article class="large-12 columns">
   {{ record.body_onder}}
   {% setcontent paarden = "paarden" where { "paardtypes": 'wild'} %} 
-      {% for paard in paarden %}
+      {% for paard in paarden|order ('paardvolgorde') %}
     <section class="large-3 small-6 columns deelnemerblok">
-      <img src="{{ paard.image|thumbnail(400,400, "c") }}" alt="{{ paard.title }}">
+      {% if paard.image!="" %}
+      <img src="{{ paard.image|thumbnail(300,300, "c") }}" alt="{{ paard.title }}">
+      {% else %}
+      {% include '_grijsvierkant_svg.twig' %}
+      {% endif %}
       <h5>{{ paard.title }}</h5>
-      <p>{{ paard.bedrijfsnaam }}</p>
       <p>{{ paard.activiteiten }}</p>
       {% if paard.website!="" %}
-      <p class="deelnemerlink"><a href="{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
+      <p class="deelnemerlink"><a href="http://{{ paard.website }}" title="Ga naar de website van {{ paard.title }} {{ paard.bedrijfsnaam }}" target="_blank">Website &raquo;</a></p>
       {% endif %}
     </section>
     {% endfor %}

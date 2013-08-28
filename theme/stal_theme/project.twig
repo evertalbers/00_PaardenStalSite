@@ -1,0 +1,22 @@
+{% include '_header.twig' %}
+
+<div class="row">
+    <div class="large-9 large-offset-3 columns">
+      <h1>{{project.title}}</h1>
+    </div>
+<div class="row">
+  <nav class="large-3 columns">
+ {% include '_project_menu.twig' %}
+  </nav>
+  <article class="large-9 columns">
+    {% if record.image!="" %}
+    <img src="{{ record.image|thumbnail(720, 360, "c") }}">
+    {% endif %}
+
+    {{ record.body}}
+
+  </article>
+</div>
+</div>
+
+{% include '_footer.twig' %}

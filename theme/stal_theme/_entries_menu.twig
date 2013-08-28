@@ -1,0 +1,8 @@
+<ul class="side-nav">
+  <li class='active'><a href="/entrys" title="Naar entryen overzicht">Nieuws overzicht</a></li>
+  <li class="divider"></li>
+  {% setcontent entries= "nieuwsberichten/latest/100" %}
+  {% for entry in entries %}
+  <li {% if entry|current %}class="active" {% endif %}><a href="{{ entry.link }}">{{entry.title}}</a></li>
+  {% endfor %}
+</ul>

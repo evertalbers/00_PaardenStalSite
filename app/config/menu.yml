@@ -3,18 +3,20 @@
 
 main:
   - label: Wie
-    path: entry/1
-  - label: Wat
-    path: page/wat-is-studio-de-paardenstal-flexplek-amsterdam-oost
-    title: Studio De Paardenstal is een samenwerkingsvernband van zelfstandige professionals in Amsterdam
-  - label: Projecten
-    path: page/1
-  - label: Wie
-    path: page/ontmoet-de-deelnemers
+    path: /page/ontmoet-de-deelnemers
     title: Dit zijn de mensen aan Studio De Paardenstal
+  - label: Wat
+    path: /page/wat-is-studio-de-paardenstal-flexplek-amsterdam-oost
+    title: Studio De Paardenstal is een samenwerkingsvernband van zelfstandige professionals in Amsterdam
   - label: Waar
-    path: page/contact-mauritskade-55d-amsterdam
+    path: /page/contact-mauritskade-55d-amsterdam
     title: Studio De paardenstal zit op een mooie locatie aan de rand van het Oosterpark
-  - label: The Bolt site
-    link: http://bolt.cm
-    class: last
+  - label: Projecten
+    path: /projects
+    title: Een greep uit de projecten van Studio De Paardenstal
+  - label: Nieuws
+    path: /nieuwsberichten
+    title: Nieuws evenementen en agenda
+  - label: Contact
+    link: /page/contact
+    class: Contactgegevens

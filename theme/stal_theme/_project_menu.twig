@@ -1,0 +1,8 @@
+<ul class="side-nav">
+  <li class='active'><a href="/projects" title="Naar projecten overzicht">Projecten overzicht</a></li>
+  <li class="divider"></li>
+  {% setcontent projects= "projects" %}
+  {% for project in projects %}
+  <li {% if project|current %}class="active" {% endif %}><a href="{{ project.link }}">{{project.title}}</a></li>
+  {% endfor %}
+</ul>

@@ -143,6 +143,9 @@ $preloader-class: "preloader" !default;
             &:hover {
               text-decoration: underline;
             }
+            &:after {
+              content:" \00bb";
+            }
           }
         }
       }

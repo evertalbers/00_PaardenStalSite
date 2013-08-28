@@ -1,26 +1,28 @@
 {% include '_header.twig' %}
 
-<div class="row separator">
-  <nav class="large-3 columns">
+<div class="row"><div class="large-9 columns large-offset-3"><h1>{{ page.title }}</h1></div></div>
+
+<div class="row">
+    <nav class="large-3 columns">
   <ul class="side-nav">
-  <li class="active"><a href="#">Link 1</a></li>
-  <li><a href="#">Link 2</a></li>
-  <li class="divider"></li>
-  <li><a href="#">Link 3</a></li>
-  <li><a href="#">Link 4</a></li>
+  {% set currentchapter = page.taxonomy.chapters|first %}
+  {% setcontent pages="pages" %}
+  {% for page in pages|order ('menuvolgorde') %}
+  {% if page.taxonomy.chapters|first==currentchapter %}
+  <li {% if page|current %}class="active"{% endif %}><a href="{{ page.link }}" title="{{ page.title }}">{{ page.title }}</a></li>
+  {% endif %}
+{% endfor %}
 </ul>
 </nav>
   <article class="large-9 columns">
     {% if page.image!="" %}
     <img src="{{ page.image|thumbnail(720, 720, "r") }}">
     {% endif %}
-   <!--  <img src="http://placeimg.com/740/480/arch" alt=""> -->
-    <h1>{{ page.title }}</h1>
     {{ record.body }}
     {% if page.diashow!=""%}
     <ul class="clearing-thumbs" data-clearing>
     {% for image in page.diashow %}
-    <li><a href="{{ image.filename|thumbnail(1200,800) }}"><img data-caption="{{ image.title }}" src="{{ image.filename|thumbnail(120,120) }}"></a></li>
+    <li><a href="{{ image.filename|thumbnail(1200,800) }}" class="th"><img data-caption="{{ image.title }}" src="{{ image.filename|thumbnail(120,120) }}"></a></li>
     {% endfor %}
     </ul>
     {% endif %}

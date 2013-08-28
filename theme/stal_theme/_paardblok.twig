@@ -1,9 +1,0 @@
-    {% for paard in paarden %}
-    <section class="large-3 small-6 columns deelnemerblok">
-      <img src="{{ paard.image|thumbnail(400,400, "c") }}" alt="{{ paard.title }}">
-      <h5>{{ paard.title }}</h5>
-      <p>{{ paard.bedrijfsnaam }}</p>
-      <p>{{ paard.activiteiten }}</p>
-      <p class="deelnemerlink"><a href="{{ paard.website }}">Website &raquo;</a></p>
-    </section>
-    {% endfor %}

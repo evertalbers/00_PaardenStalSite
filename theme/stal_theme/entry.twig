@@ -1,0 +1,29 @@
+{% include '_header.twig' %}
+
+<div class="row"><div class="large-9 columns large-offset-3"><h1>{{ nieuwsbericht.title }}</h1></div></div>
+
+<div class="row">
+    <nav class="large-3 columns">
+  {% include '_entries_menu.twig' %}
+</nav>
+  <article class="large-9 columns">
+  	{% if nieuwsbericht.image!="" %}
+  	<div class="large-6 columns">
+  	<img src="{{ nieuwsbericht.image|thumbnail(450,300)}}" alt="{{ nieuwsbericht.title}}">
+  </div>
+  	{% endif %}
+  	<p><strong>{{ nieuwsbericht.teaser }}</strong></p>
+    {{ nieuwsbericht.body }}
+    {% if nieuwsbericht.diashow!=""%}
+    <ul class="clearing-thumbs" data-clearing>
+    {% for image in nieuwsbericht.diashow %}
+    <li><a href="{{ image.filename|thumbnail(1200,800) }}"><img data-caption="{{ image.title }}" src="{{ image.filename|thumbnail(120,120) }}"></a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {{ nieuwsbericht.body_onder}}
+
+  </article>
+</div>
+
+{% include '_footer.twig' %}

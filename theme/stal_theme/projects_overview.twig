@@ -1,0 +1,35 @@
+{% include '_header.twig' %}
+
+<div class="row">
+    <div class="large-9 large-offset-3 columns">
+      <h1>Projecten</h1>
+    </div>
+    
+  <nav class="large-3 columns">
+  {% include '_project_menu.twig' %}
+</nav>
+<div class="large-9 columns">
+<aside class="row collapse">
+<p class="large-12 columns">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, sint, explicabo magni ducimus facere corrupti eveniet atque nobis blanditiis perspiciatis non reiciendis fuga.
+</p>
+</aside>
+{% setcontent projects= "projects" %}
+{% for project in projects %}
+<article class="row artikel_overzicht_item collapse">
+  <div class="large-4 columns"><a href="{{project.link}}" title="{{ project.title }}">
+    <img src="{{ project.image|thumbnail(219,150, "c") }}" alt="{{ project.title }}"></a></div>
+  <div class="large-8 columns">
+    <h3><a href="{{ project.link }}" title="{{ project.title }}">{{ project.title }}</a></h3>
+    <p>{{ project.teaser }}</p>
+    <p>
+      <a href="{{ project.link }}" title="{{ project.title }}">Lees meer &raquo;</a>
+    </p>
+  </div>
+</article>
+{% endfor %}
+</div>
+</div>
+
+
+{% include '_footer.twig' %}

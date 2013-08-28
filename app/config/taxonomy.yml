@@ -11,7 +11,7 @@ chapters:
     slug: chapters
     singular_slug: chapter
     behaves_like: grouping
-    options: { main: "The main chapter", meta: "Meta Chapter", other: "The other stuff" }
+    options: { wat: "Wat is Studio De Paardenstal", wie: "Wie", contact: "Contact" }
     has_sortorder: true
 
 paardtypes:

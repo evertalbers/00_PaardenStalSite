@@ -25,17 +25,13 @@
 
 <div class="row homebelow">
 <div class="large-6 columns">
-  <h5>Laatste nieuws</h5>
+  <h5>Actueel</h5>
   <ul>
+    {% setcontent entries="nieuwsberichten/latest/4" %}
+    {% for entry in entries %}
     <li class="nieuwsitem">
-      <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
-      <li class="nieuwsitem">
-        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
-       <li class="nieuwsitem">
-        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></li>
-      <li class="nieuwsitem">
-        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-    </li>
+      <a href="{{ entry.link }}" title="{{ entry.teaser }}">{{ entry.title }}</a></li>
+  {% endfor %}
   </ul>
 </div>
 <div class="large-6 columns">
