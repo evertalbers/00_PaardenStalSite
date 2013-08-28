@@ -12,7 +12,7 @@
       {% if paard.image!="" %}
       <img src="{{ paard.image|thumbnail(300,300, "c") }}" alt="{{ paard.title }}">
       {% else %}
-      {% include '_grijsvierkant_svg.twig' %}
+      <img src="{{ paths.theme }}ui_images/placeholder_300x300px_tinted.png" alt="Nog geen foto van {{ paard.title }}" style="paard_placeholder">
       {% endif %}
       <h5>{{ paard.title }}</h5>
       <p>{{ paard.activiteiten }}</p>
@@ -29,7 +29,7 @@
       {% if paard.image!="" %}
       <img src="{{ paard.image|thumbnail(300,300, "c") }}" alt="{{ paard.title }}">
       {% else %}
-      {% include '_grijsvierkant_svg.twig' %}
+      <img src="{{ paths.theme }}ui_images/placeholder_300x300px_tinted.png" alt="Nog geen foto van {{ paard.title }}" style="paard_placeholder">
       {% endif %}
       <h5>{{ paard.title }}</h5>
       <p>{{ paard.activiteiten }}</p>

@@ -3080,7 +3080,7 @@ a.th {
     position: absolute;
     bottom: 0em;
     font-weight: 700; }
-  .deelnemerblok svg {
+  .deelnemerblok svg, .deelnemerblok img.paard_placeholder {
     width: 100%;
     height: auto; }
 
