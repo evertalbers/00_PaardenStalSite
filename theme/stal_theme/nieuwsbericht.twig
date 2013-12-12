@@ -9,7 +9,7 @@
   <article class="large-9 columns">
   	{% if nieuwsbericht.image!="" %}
   	<div class="large-6 columns">
-  	<img src="{{ nieuwsbericht.image|thumbnail(450,300)}}" alt="{{ nieuwsbericht.title}}">
+  	<img src="{{ nieuwsbericht.image|thumbnail(450,300, "r")}}" alt="{{ nieuwsbericht.title}}">
   </div>
   	{% endif %}
   	<p><strong>{{ nieuwsbericht.teaser }}</strong></p>

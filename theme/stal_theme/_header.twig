@@ -5,14 +5,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
-      {{ app.config.general.sitename }}
-      {% if record.title is not defined and app.config.general.payoff is defined %} | {{ app.config.general.payoff }}{% endif %}</title>
-
+  <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}{{ app.config.general.sitename }}{% if record.title is not defined and app.config.general.payoff is defined %} | {{ app.config.general.payoff }}{% endif %}</title>
+  {% if record.excerpt!="" %}<meta name="description" content="{{ record.excerpt(250) }}">{% endif %}
+  <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="css/normalize.css" />
   <!-- If you are using CSS version, add this -->
-  <link rel="stylesheet" href="{{ paths.theme }}css/stal.css" />
-  <link rel="stylesheet" href="{{ paths.theme }}css/app.css" />
+  <link rel="stylesheet" href="{{ paths.theme }}css/stal.css">
+  <link rel="stylesheet" href="{{ paths.theme }}css/app.css">
   <script src="{{ paths.theme }}js/vendor/custom.modernizr.js"></script>
 
 </head>
