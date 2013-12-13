@@ -2,7 +2,7 @@
 /* CHEAT SHEET
 sass --watch stal.scss:../css/stal.css
 */
-/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
+/* normalize.css v2.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -3112,3 +3112,50 @@ footer {
     max-width: 100%; }
   footer .footermail {
     text-align: right; }
+
+ul.mpFormTable li {
+  list-style: none; }
+  ul.mpFormTable li .mpMultipleInput,
+  ul.mpFormTable li .mpMultipleLabel,
+  ul.mpFormTable li div.mpFormLabel,
+  ul.mpFormTable li div.mpFormField,
+  ul.mpFormTable li span.mandatorySign,
+  ul.mpFormTable li .descriptionLabel {
+    float: left; }
+  ul.mpFormTable li div.mpFormLabel {
+    width: 30%;
+    display: inline-block;
+    clear: left; }
+  ul.mpFormTable li div.mpFormField {
+    width: 70%;
+    clear: right; }
+  ul.mpFormTable li .descriptionLabel {
+    width: 85%; }
+  ul.mpFormTable li span.mandatorySign {
+    float: left;
+    color: #b20404; }
+  ul.mpFormTable li .mpMultipleLabel {
+    clear: right;
+    display: inline-block; }
+  ul.mpFormTable li input.mpMultipleInput {
+    clear: left;
+    margin: 0.5em 0.5em 0 0; }
+
+.mpFormField ul {
+  margin: 0;
+  padding: 0; }
+
+.submitButton {
+  background: #222222;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  margin: 0 0 0 30%;
+  padding: 0.5em 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-border-radius: 20px;
+  border-radius: 20px; }
+  .submitButton:hover {
+    background: #b20404; }

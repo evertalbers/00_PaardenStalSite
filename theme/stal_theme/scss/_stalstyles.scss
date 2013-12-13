@@ -118,3 +118,64 @@ footer {
 		text-align: right;
 	}
 }
+// ===========================
+// Formulier
+// ===========================
+ul.mpFormTable {
+	li {
+		list-style: none;
+		.mpMultipleInput, 
+		.mpMultipleLabel,
+		div.mpFormLabel,
+		div.mpFormField,
+		span.mandatorySign,
+		.descriptionLabel {
+			float: left;
+		}
+
+		div.mpFormLabel {
+			width: 30%;
+			display: inline-block;
+			// border: 1px solid blue;
+			clear: left;
+		}
+		div.mpFormField{
+			width: 70%;
+			clear: right;
+		}
+		.descriptionLabel {
+			width: 85%;
+		}
+		span.mandatorySign {
+			float: left;
+			color: $primary-color;
+		}
+		.mpMultipleLabel {
+			clear: right;
+			display: inline-block;
+			// border: 1px solid blue;
+		}
+		input.mpMultipleInput{
+			clear: left;
+			margin: 0.5em 0.5em 0 0;
+		}
+	}
+}
+.mpFormField ul {
+	margin: 0;
+	padding: 0;
+}
+.submitButton {
+	background: #222222;
+	color: white;
+	border: none;
+	font-size: 1.5em;
+	margin: 0 0 0 30%;
+	padding: 0.5em 1em;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	&:hover {background: $primary-color}
+}
