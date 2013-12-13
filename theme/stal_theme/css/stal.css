@@ -3140,13 +3140,17 @@ ul.mpFormTable li {
   ul.mpFormTable li input.mpMultipleInput {
     clear: left;
     margin: 0.5em 0.5em 0 0; }
+  ul.mpFormTable li div.submitCellSpacer {
+    height: 0; }
 
 .mpFormField ul {
   margin: 0;
   padding: 0; }
+.mpFormField input {
+  margin-bottom: 0; }
 
 .submitButton {
-  background: #222222;
+  background: #b20404;
   color: white;
   border: none;
   font-size: 1.5em;
@@ -3158,4 +3162,4 @@ ul.mpFormTable li {
   -webkit-border-radius: 20px;
   border-radius: 20px; }
   .submitButton:hover {
-    background: #b20404; }
+    background: #222222; }

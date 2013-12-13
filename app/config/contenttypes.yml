@@ -143,3 +143,26 @@ homepages:
     taxonomy: [ chapters ]
     sort: title
     recordsperpage: 100
+uitnodigingen:
+    name: uitnodigingen
+    singular_name: uitnodiging
+    fields:
+        title:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+        body:
+            type: html
+            height: 300px
+        body_onder:
+            label: Vervolg bodytekst
+            type: html
+            height: 300px
+            prefix: "Deze tekst komt na een eventuele reeks foto's"
+    template: 'uitnodiging.twig'
+    sort: title
+    recordsperpage: 100

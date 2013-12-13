@@ -1,0 +1,22 @@
+{% include '_header.twig' %}
+<div class="fullwidth tinted">
+    <div class="row">
+      <div class="small-12 large-12 columns">
+        <img src="{{ record.image|thumbnail(1024,360) }}" alt="{{ record.title }}">
+    </div>  
+  </div>
+</div>
+<div class="row">
+    
+  <article class="large-9 columns">
+    <h1>{{ record.title }}</h1>
+    {{ record.body }}
+    {{ record.body_onder}}
+
+  </article>
+  <nav class="large-3 columns">
+       &nbsp;
+    </nav>
+</div>
+
+{% include '_footer.twig' %}
